@@ -10,8 +10,8 @@ Computer technology is the future, the field is diverse, and we hope that our to
  
 __Directories__
 
-        _frontend_ :
+        frontend :
 
-        _backend_ :
+        backend :
 
-        _doc_ :
+        doc :
