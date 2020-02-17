@@ -9,3 +9,7 @@ The target group is going to be 9th graders, who we believe are sophisticated en
 Computer technology is the future, the field is diverse, and we hope that our tool can act as a catalyst for the next generation of students to navigate these technologies effectively.
  
 __Directories__
+
+_frontend_ :
+_backend_ :
+_doc_ :
