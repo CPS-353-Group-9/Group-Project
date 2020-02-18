@@ -14,5 +14,3 @@ __Directories__
 
         backend : All the code for the website's back-end architecture (PHP) will go here.
 
-
-	
