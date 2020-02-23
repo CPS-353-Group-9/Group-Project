@@ -12,6 +12,4 @@ Computer technology is the future, the field is diverse, and we hope that our to
  
 __Directories__
 
-        frontend : All the code for the website's front-end interface (HTML, CSS, Javascript) will go here.
-
-        backend : All the code for the website's back-end architecture (PHP) will go here.
+        code : All the code for the website's front-end and back-end will go here.
