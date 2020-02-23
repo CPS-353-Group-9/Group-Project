@@ -13,4 +13,4 @@ Computer technology is the future, the field is diverse, and we hope that our to
 __Directories__
 
         code : All the code for the website's front-end and back-end will go here.
-        doc: All the documentation for the project will go here.
+        doc : All the documentation for the project will go here.
