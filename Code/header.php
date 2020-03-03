@@ -6,11 +6,6 @@
 <html>
 
 	<head>
-	<!--
-		Group Project
-		
-	-->
-	
 		<meta charset="UTF-8" />
 		<title>Group 9 Project</title>
 		
