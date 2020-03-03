@@ -1,0 +1,17 @@
+.primary{
+    background-color: #f58426; /*new paltz orange*/
+    color: #003e7e; /*new patlz blue*/
+    font-weight: bold;
+}  
+.secondary{
+    background-color: #003e7e; /*new patlz blue*/
+    color: #f58426; /*new paltz orange*/
+}
+.button:hover, .button.is-hovered {
+    border-color: #b5b5b5;
+    background-color: #f2f2f2;
+}
+a.navbar-item:hover{
+    border-color: #f58426;
+    background-color: #f2f2f2;
+}
