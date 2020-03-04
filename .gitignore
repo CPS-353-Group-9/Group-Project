@@ -41,3 +41,5 @@ npm-debug.log
 yarn-error.log
 
 # End of https://www.gitignore.io/api/vue,vuejs,dotenv,visualstudiocode
+No Framework/index.html
+No Framework/test.php
