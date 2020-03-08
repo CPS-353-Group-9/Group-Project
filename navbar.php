@@ -1,19 +1,19 @@
 <?php
 	echo 
-    '<nav class="navbar" role="navigation" aria-label="main navigation" style="background-color: #f58426;">
+    ('<nav class="navbar" role="navigation" aria-label="main navigation" style="background-color: #f58426;">
         <div class="navbar-brand">
         <a class="navbar-item" href="index.html">
             <img alt="Group 9 Logo " width="112" height="28">
         </a>
     
-        <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+        <a :class="{ \'is-active\':isOpen }" @click="isOpen = !isOpen" role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false">
             <span aria-hidden="true"></span>
             <span aria-hidden="true"></span>
             <span aria-hidden="true"></span>
         </a>
         </div>
     
-        <div id="navbarBasicExample" class="navbar-menu">
+        <div id=:class="{ \'is-active\':isOpen }" class="navbar-menu">
         <div class="navbar-start">
             <a class="navbar-item primary">
             Home
@@ -54,5 +54,13 @@
             </div>
         </div>
         </div>
-    </nav>';
+    </nav>
+
+    <script>
+        export default {
+        data: ()=>({
+            isOpen: false
+        })
+        }
+    </script>');
 ?>
