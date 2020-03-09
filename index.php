@@ -28,11 +28,7 @@ most of the real functionality.
 		<?php
 			if (isset($_SESSION['userId'])) // if logged in display this message
 			{
-				echo ("<p Login Status: Logged in </p>"); 
-			}
-			else // when logged out default displayed message
-			{
-				echo ("<p Login Status: Logged out </p>");
+				echo ('<p> Login Status: Logged in </p>'); 
 			}
 		?>
 	</body>
