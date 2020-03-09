@@ -7,10 +7,3 @@ This project is a web application / website to help guide people through learnin
 The target group is going to be 9th graders, who we believe are sophisticated enough to meaningfully engage with computer concepts. Our goal is to make the process of learning to use technology an easily accessible and rewarding experience for high schoolers.
         	
 Computer technology is the future, the field is diverse, and we hope that our tool can act as a catalyst for the next generation of students to navigate these technologies effectively.
-
-
- 
-__Directories__
-
-        code : All the code for the website's front-end and back-end will go here.
-        doc : All the documentation for the project will go here.
