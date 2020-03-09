@@ -31,14 +31,9 @@ if (isset($_POST['login-submit']))
 
 			if ($row = mysqli_fetch_assoc($result))
 			{
-				$pass_check = password_verify($password, $row['Password']);
+				//$pass_check = password_verify($password, $row['Password']);
 
-				if ($pass_check == false) // passwords dont match
-				{
-					header("Location: ../login.php?error=wrongpassword");
-					exit();	
-				}
-				else if ($pass_check == true) // passwords match
+				if ($password == $row['Password']) // passwords match
 				{
 					session_start();
 					$_SESSION['userId'] = $row['ID']; // getting the ID so we can later get their linked rpg info
