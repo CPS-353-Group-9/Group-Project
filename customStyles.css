@@ -1,10 +1,10 @@
 .primary{
     background-color: #f58426; /*new paltz orange*/
-    color: #003e7e; /*new patlz blue*/
+    color: #003e7e; /*new paltz blue*/
     font-weight: bold;
 }  
 .secondary{
-    background-color: #003e7e; /*new patlz blue*/
+    background-color: #003e7e; /*new paltz blue*/
     color: #f58426; /*new paltz orange*/
 }
 .button:hover, .button.is-hovered {

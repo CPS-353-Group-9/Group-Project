@@ -3,7 +3,7 @@
     ('<nav class="navbar" role="navigation" aria-label="main navigation" style="background-color: #f58426;">
         <div class="navbar-brand">
         <a class="navbar-item" href="index.html">
-            <img alt="Group 9 Logo " width="112" height="28">
+            <img src="img\eap-logo1.png" alt="Group 9 Logo " width="80" height="28">
         </a>
     
         <a :class="{ \'is-active\':isOpen }" @click="isOpen = !isOpen" role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false">

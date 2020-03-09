@@ -1,1 +1,1 @@
-This is where the images go.
+This is where the images/other assets for the website go.
