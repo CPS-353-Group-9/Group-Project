@@ -10,7 +10,7 @@ Includes the style sheets and the navbar.php file which contains
 most of the real functionality.
 
 */
-
+	session_start(); // if credentials match the database in the login.php page, user will be taken back to the home page and be succefully logged in
 ?>
 
 <!DOCTYPE html>
@@ -25,5 +25,15 @@ most of the real functionality.
 	<body>
 		<?php include 'navbar.php';?>
 		<h3>Welcome to the Home Page.</h3>
+		<?php
+			if (isset($_SESSION['userId'])) // if logged in display this message
+			{
+				echo "<p Login Status: Logged in </p>"; 
+			}
+			else // when logged out default displayed message
+			{
+				echo "<p Login Status: Logged out </p>";
+			}
+		?>
 	</body>
 </html>
