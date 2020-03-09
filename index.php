@@ -9,7 +9,7 @@
 
 	<body>
 		<?php include 'navbar.php';?>
-		<header> Group 9 Project </header>
+		<header> Easy As Pie-thon </header>
 		<h3>Welcome to the Home Page.</h3>
 	</body>
 </html>
