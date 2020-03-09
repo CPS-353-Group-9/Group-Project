@@ -1,5 +1,9 @@
 <?php
 
+	/*
+		Accesses the database.
+	*/
+
 	$host = 'localhost';
 	$user = 'se_20s_g09';
 	$pass = '6j1v7u';
@@ -11,3 +15,5 @@
 	{
 		die("ERROR: Could not connect to server. " . mysqli_connect_error());
 	}
+	
+?>

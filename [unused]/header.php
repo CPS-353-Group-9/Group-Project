@@ -1,4 +1,14 @@
 <?php
+
+/*
+
+This is the header.php file.
+
+Not in use at the moment; Originally designed to house the login functionality.
+
+*/
+
+
 	session_start();
 ?>
 

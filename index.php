@@ -1,3 +1,18 @@
+<?php
+
+/*
+
+This is the index page/main page of the website.
+Mainly just a landing page from which the user will navigate
+to the other areas of the site.
+
+Includes the style sheets and the navbar.php file which contains 
+most of the real functionality.
+
+*/
+
+?>
+
 <!DOCTYPE html>
 <html>
 	<head>

@@ -1,5 +1,9 @@
 <?php 
 
+/*
+	Handles the signup process.
+*/
+
 if (isset($_POST['signup-submit'])) // after sign up button press....
 {
 	require "db_i.php"; // database connection file
@@ -87,3 +91,5 @@ else // send back to signup page
 	header("Location: ../signup.php");
 	exit();
 }
+
+?>

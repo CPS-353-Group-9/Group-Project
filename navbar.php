@@ -1,4 +1,14 @@
 <?php
+
+	/*
+	
+		The navbar.php file.
+		
+		Spits out an html document which creates the navigation bar on the top of the website.
+		Included on most pages.
+	
+	*/
+
 	echo 
     ('<nav class="navbar" role="navigation" aria-label="main navigation" style="background-color: #f58426;">
         <div class="navbar-brand">
@@ -15,7 +25,7 @@
     
         <div id=:class="{ \'is-active\':isOpen }" class="navbar-menu">
         <div class="navbar-start">
-            <a class="navbar-item primary">
+            <a class="navbar-item primary" href="index.php">
             Home
             </a>
     
@@ -44,7 +54,7 @@
                 <a class="button primary" href="signup.php">
                 <strong>Sign up</strong>
                 </a>
-                <a class="button secondary">
+                <a class="button secondary" href="login.php">
                 Log in
                 </a>
                 <a class="button secondary" type = "submit" name="logout-submit">

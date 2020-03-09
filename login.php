@@ -1,5 +1,9 @@
 <?php
-    //login functionality goes here
+    /*
+		The Login page.
+		
+		Includes the navbar.php script and the login_i.php script, which does most of the work.
+	*/
 ?>
 
 <!DOCTYPE html>
@@ -13,7 +17,7 @@
 
 	<body>
 		<?php include 'navbar.php';?>
-		<header> Group 9 Project </header>
+		<header> Easy As Pie-thon </header>
         <h3>Login Page</h3>
         
         <form action = "includes/login_i.php" method = "post">
