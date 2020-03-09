@@ -9,17 +9,17 @@ if (isset($_POST['login-submit']))
 
 	if (empty($email) || empty($password)) // if no fields were entered
 	{
-		header("Location: ../index.php?error=emptyfields");
+		header("Location: ../login.php?error=emptyfields");
 		exit();		
 	}
 	else
 	{
-		$sql = "SELECT * FROM User WHERE Username=? OR Email=?;";
+		$sql = "SELECT * FROM User WHERE Username=? OR Email=?;"; // grabs from username or email so user can use either field to sign in
 		$stmt = mysqli_stmt_init($connect);
 
 		if (!mysqli_stmt_prepare($stmt, $sql))
 		{
-			header("Location: ../index.php?error=sqlerror");
+			header("Location: ../login.php?error=sqlerror");
 			exit();	
 		}
 		else
@@ -35,10 +35,10 @@ if (isset($_POST['login-submit']))
 
 				if ($pass_check == false) // passwords dont match
 				{
-					header("Location: ../index.php?error=wrongpassword");
+					header("Location: ../login.php?error=wrongpassword");
 					exit();	
 				}
-				else if ($pass_check == true) // passwords match **************** TODO enter learning environment
+				else if ($pass_check == true) // passwords match
 				{
 					session_start();
 					$_SESSION['userId'] = $row['ID']; // getting the ID so we can later get their linked rpg info
@@ -49,13 +49,13 @@ if (isset($_POST['login-submit']))
 				}
 				else
 				{
-					header("Location: ../index.php?error=wrongpassword");
+					header("Location: ../login.php?error=wrongpassword");
 					exit();
 				}
 			}
 			else // no match to username in the database
 			{
-				header("Location: ../index.php?error=nouser");
+				header("Location: ../login.php?error=nouser");
 				exit();	
 			}
 		}
