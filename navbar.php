@@ -79,7 +79,7 @@
                 <a class="button secondary" href="login.php">
                 Log in
                 </a>
-                <a class="button secondary" type = "submit" name="logout-submit">
+                <a class="button secondary" href="logout_i.php" type = "submit" name="logout-submit">
                     Log out
                 </a>
             </div>
