@@ -1,9 +1,5 @@
 <?php
 
-/*
-	Handles the login process.
-*/
-
 if (isset($_POST['login-submit']))
 {
 	require "db_i.php";
@@ -33,7 +29,7 @@ if (isset($_POST['login-submit']))
 
 			$result = mysqli_stmt_get_result($stmt);
 
-			if ($row == mysqli_fetch_assoc($result))
+			if ($row = mysqli_fetch_assoc($result))
 			{
 				$pass_check = password_verify($password, $row['Password']);
 
