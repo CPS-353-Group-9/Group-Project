@@ -74,8 +74,11 @@ if (isset($_POST['signup-submit'])) // after sign up button press....
 				}
 				else
 				{
+					//$hashed_pass = password_hash($pass, PASSWORD_DEFAULT); // hashed pass for security
+
 					mysqli_stmt_bind_param($stmt, "sss", $username, $email, $pass);
 					mysqli_stmt_execute($stmt);
+
 					header("Location: ../signup.php?signup=success");
 					exit();
 				}
