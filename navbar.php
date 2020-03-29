@@ -44,30 +44,18 @@
                 </div>
         
                 <div class="navbar-item has-dropdown is-hoverable">
-                    <a class="navbar-link primary">
+                    <a class="navbar-link primary" href="stats.php">
                         Account
                     </a>
                     <div class="navbar-dropdown">
-                        <a class="navbar-item secondary">
+                        <a class="navbar-item secondary" href="stats.php">
                         Stats
                         </a>
-                        <a class="navbar-item secondary">
+                        <a class="navbar-item secondary" href="settings.php">
                         Settings
                         </a>
                     </div>
                 </div>
-            </div>
-            
-            <div class="navbar-brand">
-                <a class="navbar-item" href="index.php">
-                    <img src="img\eap-logo2.png" alt="Group 9 Logo " width="275" height="75">
-                </a>
-            
-                <a :class="{ \'is-active\':isOpen }" @click="isOpen = !isOpen" role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false">
-                    <span aria-hidden="true"></span>
-                    <span aria-hidden="true"></span>
-                    <span aria-hidden="true"></span>
-                </a>
             </div>
         
             <div class="navbar-end">

@@ -2,7 +2,7 @@
 
 /*
 
-Test page for the Learn option.
+Stats page for the Account option.
 
 */
 
@@ -20,6 +20,6 @@ Test page for the Learn option.
 
 	<body>
 		<?php include 'navbar.php';?>
-		<h3>Test Your Knowledge</h3>
+		<h3>Stats</h3>
 	</body>
 </html>
