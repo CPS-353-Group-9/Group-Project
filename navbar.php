@@ -7,7 +7,9 @@
 		Spits out an html document which creates the navigation bar on the top of the website.
 		Included on most pages.
 	
-	*/
+    */
+    
+    session_start();
 
 	echo 
     ('<nav class="navbar" role="navigation" aria-label="main navigation" style="background-color: #f58426;">
