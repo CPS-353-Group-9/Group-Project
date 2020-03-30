@@ -14,7 +14,7 @@ if (isset($_POST['login-submit']))
 	}
 	else
 	{
-		$sql = "SELECT * FROM User WHERE Username=? OR Email=?;"; // grabs from username or email so user can use either field to sign in
+		$sql = "SELECT * FROM User WHERE Username=? OR Email=?;"; // grabs from username or email so user can use either field to log in
 		$stmt = mysqli_stmt_init($connect);
 
 		if (!mysqli_stmt_prepare($stmt, $sql))
