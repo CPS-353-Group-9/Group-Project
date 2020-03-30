@@ -32,6 +32,35 @@
 		<input type="text" name="email" placeholder="Email"></div>
 		<div id = "fid1"><input type="password" name="pass" placeholder="Password">
 		<input type="password" name="pass_repeat" placeholder="Repeat Password"></div>
+		<?php
+			if (isset($_GET["error"])) // getting the error checks from 'signup_i.php' and showing the user what they inputed incorrectly
+			{
+				if ($_GET["error"] == "emptyfields")
+				{
+					echo '<p> You must fill all fields. </p>';
+				}
+				else if ($_GET["error"] == "invalidemail")
+				{
+					echo '<p> You must enter a valid email. </p>';
+				}
+				else if ($_GET["error"] == "invalidusername")
+				{
+					echo '<p> Username must only have letters and numbers. </p>';
+				}
+				else if ($_GET["error"] == "passcheck")
+				{
+					echo '<p> Passwords do not match. </p>';
+				}
+				else if ($_GET["error"] == "usertaken")
+				{
+					echo '<p> Username already taken. </p>';
+				}
+				else if ($_GET["error"] == "success")
+				{
+					echo '<p> Signup successful! </p>';
+				}
+			}
+		?>
 		<div id = "fid1"><button type="submit" name="signup-submit">Sign Up</button></div>
 	</form>
 	</div>
