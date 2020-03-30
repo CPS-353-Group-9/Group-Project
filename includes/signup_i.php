@@ -40,17 +40,17 @@ if (isset($_POST['signup-submit'])) // after sign up button press....
 		header("Location: ../signup.php?error=passcheck&user=".$username."&email=".$email);
 		exit();
 	}
-	else // checking if the inputed username is already taken
+	else 
 	{
 		$sql = "SELECT Username FROM User WHERE Username=?";
 		$stmt = mysqli_stmt_init($connect);
 
-		if (!mysqli_stmt_prepare($stmt, $sql))
+		if (!mysqli_stmt_prepare($stmt, $sql)) // checking for a sql error
 		{
 			header("Location: ../signup.php?error=sqlerror");
 			exit();
 		}
-		else
+		else 
 		{
 			mysqli_stmt_bind_param($stmt, "s", $username);
 			mysqli_stmt_execute($stmt);
@@ -58,7 +58,7 @@ if (isset($_POST['signup-submit'])) // after sign up button press....
 
 			$resultcheck = mysqli_stmt_num_rows($stmt);
 
-			if ($resultcheck > 0)
+			if ($resultcheck > 0) // checking if the inputed username is already taken
 			{
 				header("Location: ../signup.php?error=usertaken&email=".$email);
 				exit();
@@ -79,7 +79,7 @@ if (isset($_POST['signup-submit'])) // after sign up button press....
 					mysqli_stmt_bind_param($stmt, "sss", $username, $email, $pass);
 					mysqli_stmt_execute($stmt);
 
-					header("Location: ../signup.php?signup=success");
+					header("Location: ../signup.php?error=success");
 					exit();
 				}
 			}
@@ -87,7 +87,7 @@ if (isset($_POST['signup-submit'])) // after sign up button press....
 	}
 
 	mysqli_stmt_close($stmt);
-	mysqli_close($conn);
+	mysqli_close($connect);
 }
 else // send back to signup page
 {
