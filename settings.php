@@ -5,7 +5,6 @@
 Settings page for the Account option.
 
 */
-
 ?>
 
 <!DOCTYPE html>
