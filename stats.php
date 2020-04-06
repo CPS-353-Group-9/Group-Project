@@ -19,10 +19,21 @@ Stats page for the Account option.
 	</head>	
 
 	<body>
-		<?php include 'navbar.php';?>
+		<?php include 'navbar.php';
+				
+		?>
 		<h3>Stats</h3>
 		
-		
+		<?php
+				if (isset($_SESSION['userId'])) // if logged in display this message
+			{
+				echo '<p> Login Status: Logged in </p>' . $_SESSION['user']; 
+			}
+			else
+			{
+				echo '<p> Login Status: Logged out </p>';
+			}
+		?>
 		
 	</body>
 </html>
