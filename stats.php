@@ -21,5 +21,8 @@ Stats page for the Account option.
 	<body>
 		<?php include 'navbar.php';?>
 		<h3>Stats</h3>
+		
+		
+		
 	</body>
 </html>
