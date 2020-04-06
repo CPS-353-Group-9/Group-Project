@@ -29,7 +29,7 @@ most of the real functionality.
 		<?php
 			if (isset($_SESSION['userId'])) // if logged in display this message
 			{
-				echo '<p> Login Status: Logged in </p>'; 
+				echo '<p> Login Status: Logged in </p>' . $_SESSION['user']; 
 			}
 			else
 			{
