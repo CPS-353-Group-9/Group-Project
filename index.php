@@ -29,11 +29,11 @@ most of the real functionality.
 		<?php
 			if (isset($_SESSION['userId'])) // if logged in display this message
 			{
-				echo '<p> Login Status: Logged in </p>' . $_SESSION['user']; 
+				echo ('<p> Login Status: Logged in ' . $_SESSION['user'] . '</p>'); 
 			}
 			else
 			{
-				echo '<p> Login Status: Logged out </p>';
+				echo ('<p> Login Status: Logged out </p>');
 			}
 		?>
 		
