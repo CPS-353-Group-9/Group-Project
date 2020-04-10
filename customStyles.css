@@ -15,9 +15,7 @@ a.navbar-item:hover{
     border-color: #f58426; /*new paltz orange*/
     background-color: #f2f2f2;
 }
-body{
-    background-color: hsl(27°, 91%, 85%); /*new paltz orange but lighter*/
-}
+
 #backgroundImage{
 	position: fixed;
 	text-align: center;
@@ -28,4 +26,46 @@ body{
     background-attachment: fixed;
     opacity: 0.1;
 	z-index: -1;
+}
+
+html{
+	background-color: #003e7e;
+	 background-image: radial-gradient(#1e5d9e,#003e7e);
+	height: 100%;
+}
+
+body{
+	text-align: center;
+	color: white;
+	font-family: Courier New, sans-serif;
+}
+
+h3{
+		text-align: center;
+		font-size: 48px;
+		font-family: Courier New, sans-serif;
+		padding-top: 20px;
+		color: #f58426;
+}
+
+a{
+	color: #f75268;
+}
+
+#statement1{
+	padding-top: 14px;
+	padding-left: 20%;
+	padding-right: 20%;
+	
+}
+
+#logform{
+	padding-top: 6px;
+	text-align: center;
+	
+
+}
+
+#fid1{
+	padding-bottom: 6px;
 }
