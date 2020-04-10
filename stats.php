@@ -23,11 +23,12 @@ Stats page for the Account option.
 		<?php
 				if (isset($_SESSION['userId'])) // if logged in display this message
 			{
-				echo '<p> Login Status: Logged in </p>' . $_SESSION['user']; 
+				echo '<p> User: ' . $_SESSION['user'] . "</p>";
+				echo '<p> Level: 0 </p>';				
 			}
 			else
 			{
-				echo '<p> Login Status: Logged out </p>';
+				echo '<p> [Not Logged In] </p>';
 			}
 		?>
 		
