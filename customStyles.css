@@ -69,3 +69,19 @@ a{
 #fid1{
 	padding-bottom: 6px;
 }
+
+#ch{
+	color: #f58426;
+}
+
+#ch:hover, #ch:active, #ch:focus {
+  color: white;
+}
+
+#explore-list{
+		border-style: solid;
+		border-color: #f58426;
+		width: 25%;
+		padding: 10px;
+		margin: auto;
+}
