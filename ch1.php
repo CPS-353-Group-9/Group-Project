@@ -18,6 +18,8 @@ Test page for the Learn option.
 		<?php include 'navbar.php';?>
 		<h3>Chapter One</h3>
 		
-		<p>Coming Soon</p>
+		<div class="secondary">
+			<p> This is some sample text. </p>
+		</div>
 	</body>
 </html>

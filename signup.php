@@ -19,7 +19,7 @@
 	<?php include 'navbar.php';?>
 	<body>
 		<h3>Sign Up</h3>
-		Already have an account? <a id="loglink" href="login.php">Log in here.</a>
+		Already have an account? <a class="link" id="loglink" href="login.php">Log in here.</a>
 	</body>
 	
 	<div id= "logform">

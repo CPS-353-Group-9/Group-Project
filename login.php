@@ -16,7 +16,7 @@
 		<?php include 'navbar.php';?>
 		<body>
 			<h3>Log In</h3>
-			New user? <a id = "loglink" href="signup.php">Sign up here.</a>
+			New user? <a class="link" id = "loglink" href="signup.php">Sign up here.</a>
 		</body>
         
 		<div id= "logform">

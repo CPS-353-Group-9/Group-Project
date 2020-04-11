@@ -18,10 +18,23 @@ Explore page for the Learn option.
 		<?php include 'navbar.php';?>
 		<h3>Explore The Text</h3>
 		
-		<div id="explore-list">
+		<?php
+			if (isset($_SESSION['userId'])) // if logged in display the chapters
+			{
+				echo ('
+				<div id="explore-list" class="secondary">
 		
-		<a href="ch1.php" id="ch">Chapter 1</a>
+				<a href="ch1.php" id="ch">Chapter 1</a>
+				
+				</div>
+				');
+			}
+			else
+			{
+				echo ('<p> <a class="link" href="signup.php">Create an account</a> or <a class="link" href="login.php">log in</a> to view the interactive textbook. </p>');
+			}
+		?>
+
 		
-		</div>
 	</body>
 </html>

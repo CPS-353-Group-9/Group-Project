@@ -48,8 +48,14 @@ h3{
 		color: #f58426;
 }
 
-a{
-	color: #f75268;
+a.link{
+    color: white;
+    text-decoration: underline;
+}
+a.link:hover{
+    color: #f58426;
+    font-weight: bolder;
+    text-decoration: none;
 }
 
 #statement1{
