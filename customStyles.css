@@ -79,7 +79,7 @@ a.link:hover{
 
 #ch{
 	color: #f58426;
-	font-size: 20px;
+	font-size: 16px;
 }
 
 #ch:hover, #ch:active, #ch:focus {
@@ -87,12 +87,13 @@ a.link:hover{
 }
 
 #explore-list{
-	border-radius: 25px;
+	border-radius: 12.5px;
     border-style: solid;
     border-color: #f58426;
     width: 33.33%;
     padding: 10px;
     margin: auto;
+	border-width: thin;
 }
 
 footer {
