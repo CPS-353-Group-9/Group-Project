@@ -21,5 +21,7 @@ Test page for the Learn option.
 		<div class="secondary">
 			<p> This is some sample text. </p>
 		</div>
+
+		<footer><a class="link" href="explore.php">Go back to chapter list</a></footer>
 	</body>
 </html>

@@ -24,7 +24,7 @@ Stats page for the Account option.
 				if (isset($_SESSION['userId'])) // if logged in display this message
 			{
 				echo '<p> User: ' . $_SESSION['user'] . "</p>";
-				echo '<p> Level: 0 </p>';				
+				echo '<p> Level: 0 </p>'; //get level from database	
 			}
 			else
 			{

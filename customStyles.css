@@ -15,7 +15,7 @@ a.navbar-item:hover{
     border-color: #f58426; /*new paltz orange*/
     background-color: #f2f2f2;
 }
-
+/*
 #backgroundImage{
 	position: fixed;
 	text-align: center;
@@ -27,7 +27,7 @@ a.navbar-item:hover{
     opacity: 0.1;
 	z-index: -1;
 }
-
+*/
 html{
 	background-color: #003e7e;
 	 background-image: radial-gradient(#1e5d9e,#003e7e);
@@ -37,15 +37,18 @@ html{
 body{
 	text-align: center;
 	color: white;
-	font-family: Courier New, sans-serif;
+    font-family: Courier New, sans-serif;
+    position: relative;
+    min-height: 100%;
+    min-height: 100vh;
 }
 
 h3{
-		text-align: center;
-		font-size: 48px;
-		font-family: Courier New, sans-serif;
-		padding-top: 20px;
-		color: #f58426;
+    text-align: center;
+    font-size: 48px;
+    font-family: Courier New, sans-serif;
+    padding-top: 20px;
+    color: #f58426;
 }
 
 a.link{
@@ -68,8 +71,6 @@ a.link:hover{
 #logform{
 	padding-top: 6px;
 	text-align: center;
-	
-
 }
 
 #fid1{
@@ -85,9 +86,14 @@ a.link:hover{
 }
 
 #explore-list{
-		border-style: solid;
-		border-color: #f58426;
-		width: 25%;
-		padding: 10px;
-		margin: auto;
+    border-style: solid;
+    border-color: #f58426;
+    width: 25%;
+    padding: 10px;
+    margin: auto;
+}
+
+footer {
+    position: absolute;
+    right: 0;bottom:0;left:0;
 }

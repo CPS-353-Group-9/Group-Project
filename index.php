@@ -27,10 +27,6 @@ most of the real functionality.
 			{
 				echo ('<p> Logged in as: ' . $_SESSION['user'] . '</p>'); 
 			}
-			else
-			{
-				echo ('<p> [Not Logged In] </p>');
-			}
 		?>
 		
 		<div id = "statement1">
