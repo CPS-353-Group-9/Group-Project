@@ -39,6 +39,5 @@ Explore page for the Learn option.
 			}
 		?>
 
-		
 	</body>
 </html>
