@@ -21,10 +21,11 @@ Stats page for the Account option.
 		<h3>Stats</h3>
 		
 		<?php
+		
 				if (isset($_SESSION['userId'])) // if logged in display this message
 			{
 				echo '<p> User: ' . $_SESSION['user'] . "</p>";
-				echo '<p> Level: 0 </p>'; //get level from database	
+				echo '<p> Level: ' . $_SESSION['level'] . '</p>'; //get level from database	
 			}
 			else
 			{
