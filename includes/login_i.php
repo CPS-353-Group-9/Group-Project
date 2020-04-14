@@ -38,6 +38,7 @@ if (isset($_POST['login-submit']))
 					session_start();
 					$_SESSION['userId'] = $row['ID']; // getting the ID so we can later get their linked rpg info
 					$_SESSION['user'] = $row['Username']; // getting Username
+					$_SESSION['level'] = $row['Level'];
 
 					header("Location: ../index.php?login=success"); // successful login
 					exit();
