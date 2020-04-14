@@ -65,8 +65,10 @@ if (isset($_POST['signup-submit'])) // after sign up button press....
 			}
 			else // passed all checks, puts users entered credentials to database
 			{
+				// Inserting credentials into the DB
 				$sql = "INSERT INTO User (Username, Email, Password) VALUES (?, ?, ?)";
 				$stmt = mysqli_stmt_init($connect);
+
 				if (!mysqli_stmt_prepare($stmt, $sql))
 				{
 					header("Location: ../signup.php?error=sqlerror");
@@ -74,10 +76,9 @@ if (isset($_POST['signup-submit'])) // after sign up button press....
 				}
 				else
 				{
-					//$hashed_pass = password_hash($pass, PASSWORD_DEFAULT); // hashed pass for security
-
 					mysqli_stmt_bind_param($stmt, "sss", $username, $email, $pass);
 					mysqli_stmt_execute($stmt);
+
 
 					header("Location: ../signup.php?error=success");
 					exit();
