@@ -12,9 +12,6 @@
     background-color: #003e7e; /*new paltz blue*/
     color: #f58426; /*new paltz orange*/
 }
-.secondary h4{
-    font-size: 36px;
-}
 
 .button:hover, .button.is-hovered {
     border-color: #b5b5b5;

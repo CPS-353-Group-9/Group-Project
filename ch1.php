@@ -49,9 +49,7 @@ Test page for the Learn option.
 		</div>
 
 		<footer>
-			<a class="link" href="explore.php">Go back to chapter list</a>
-			<br>
-			<br>
+			<p>	<a class="link" href="explore.php">Go back to chapter list</a> <br> </p>
 		</footer>
 	</body>
 </html>
