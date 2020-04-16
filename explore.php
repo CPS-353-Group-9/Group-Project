@@ -22,18 +22,26 @@ Explore page for the Learn option.
 			if (isset($_SESSION['userId'])) // if logged in display the chapters
 			{
 				echo ('
-					<div id="explore-list" class="secondary">
-						<a href="ch1.php" id="ch">Chapter 1</a>
+					<div class="textbook-body">
+						<h4>Welcome!</h4>
+						<p> Welcome to the interactive textbook by Easy as Pie-thon! This is where you will learn the basics of programming in a coding language called Python. Our I-textbook will allow you to read and study programming concepts and the provide exercises at the end of each chapter to make sure you understand. As you successfully complete exercises, you gain experience points and level up to be able to view the next chapter. (You can view your experience points and level under <a class="link" href="stats.php">Account > Stats</a> in the menu above.) Click on a chapter below to begin or continue a lesson. Happy learning, good luck, and remember: it\'s okay to make mistakes! In fact, they are welcome and will help you learn!</p>
 					</div>
+					<br>
 				');
-				/* 
-				$ch = "ch";
-				for i up to user's level
-					change $ch to match	level
-					display link to $ch_.php
-				*/
+
+				echo('<div id="explore-list" class="secondary">');
+					/* 
+					$ch = "ch";
+					$class = 1; //1 for primary, 2 for secondary
+					$link = "ch" . $ch . ".php"
+					for i up to user's level
+						change $ch to match	level
+						display link to $link - alternate primary/secondary class for each chapter button
+					*/
+					echo('<a class="button primary" href="ch1.php">Chapter 1</a>');
+				echo('</div>');
 			}
-			else
+			else //if not logged in, encourage log-in or sign-up
 			{
 				echo ('<p> <a class="link" href="signup.php">Create an account</a> or <a class="link" href="login.php">log in</a> to view the interactive textbook and start learning Python! </p>');
 			}
