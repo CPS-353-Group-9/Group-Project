@@ -21,37 +21,43 @@ Settings page for the Account option.
 			{
 				// TOP BORDER
 				echo(
-					'<div id="explore-list" class="secondary">
+					'<div id="setting-border" class="secondary">
 					<table>
 
 					<tr>
 						<th rowspan="3"> <img src="img/ACDC_logo.png" height="300" width="300" /> </th>
-						<th> <h6>USERNAME: '. $_SESSION['user'] .'</h6> </th>
-						<th> <h6>LEVEL: '. $_SESSION['level'] .' </h6> </th>
+						<th> <h6> USERNAME: </h6> </th>
+						<th> <h6> '. $_SESSION['user'] .' </h6> </th>
+						<th> <h6> LEVEL:  </h6> </th>
+						<th> <h6> '. $_SESSION['level'] .' </h6> </th>
 					</tr>
 
 					<tr>
-						<th> <h6>BIO</h6> </th>
-						<th> <h6>MEMBER SINCE: '. $_SESSION['create'] .' </h6> </th>
+						<th> <h6> MEMBER SINCE: </h6> </th>
+						<th> <h6> '. $_SESSION['create'] .' </h6> </th>
 					</tr>
 
 					<tr>
-						<th>        </th>
+						<th> <h6> </h6> </th>
+						<th> <h6> </h6> </th>
+						<th> <h6> </h6> </th>
 						<th> <a class="button primary" href="edit_settings.php">EDIT PROFILE</a> </th>
 					</tr>
 
 					</table>
 					</div>');
-					
+				// USER DETAILS AND ACTIVITY FEED BORDERS
 				echo(
-					'<table>
+					'<div id="setting-border" class="secondary">
+					<table>
 
 					<tr>
-						<th> <div id="explore-list" class="secondary"> <h6>USER DETAILS</h6> </div> </th>
-						<th> <div id="explore-list" class="secondary"> <h6>ACTIVITY FEED</h6> </div> </th>
+						<th> <div id="subsetting-border" class="secondary"> <h6>USER DETAILS</h6> </div> </th>
+						<th> <div id="subsetting-border" class="secondary"> <h6>ACTIVITY FEED</h6> </div> </th>
 					</tr>
 
-					</table>');
+					</table>
+					</div>');
 			}
 			else
 			{
