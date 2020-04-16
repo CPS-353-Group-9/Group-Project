@@ -133,3 +133,13 @@ footer {
     margin: auto;
 	border-width: thin;
 }
+
+#subsetting-border{
+	border-radius: 12.5px;
+    border-style: solid;
+    border-color: #f58426;
+    width: 24.25em;
+    padding: 10px;
+    margin: auto;
+	border-width: thin;
+}
