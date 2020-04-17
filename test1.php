@@ -21,7 +21,9 @@ Test page for the Learn option.
 		<?php
 			if (isset($_SESSION['userId'])) // if logged in display the chapters
 			{
-				echo('Placeholder');
+				echo('<div id ="testlandingpage">');
+				echo('<a class="button primary testbutton2" href="test1.php">Submit</a>');	
+				echo('</div>');
 			}
 			else
 			{
