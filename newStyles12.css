@@ -1,0 +1,40 @@
+html{
+	background-color: #003e7e;
+	 background-image: radial-gradient(#1e5d9e,#003e7e);
+	height: 100%;
+}
+
+body{
+	text-align: center;
+	color: black;
+	font-family: Courier New, sans-serif;
+}
+
+h3{
+		text-align: center;
+		font-size: 48px;
+		font-family: Courier New, sans-serif;
+		padding-top: 20px;
+		color: #f58426;
+}
+
+a{
+	color: #f75268;
+}
+
+#statement1{
+	padding-left: 20%;
+	padding-right: 20%;
+	
+}
+
+#logform{
+	padding-top: 6px;
+	text-align: center;
+	
+
+}
+
+#fid1{
+	padding-bottom: 6px;
+}

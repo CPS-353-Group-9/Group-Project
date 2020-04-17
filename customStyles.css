@@ -45,6 +45,12 @@ a.link:hover{
     font: bold italic;
 }
 
+.testbutton{
+	font-size: 20px;
+	width: 100%;
+	background-image: linear-gradient(180deg, #f5903d,#f58426);
+}
+
 /*---HTML TAGS---*/
 html{
 	background-color: #003e7e;
@@ -142,4 +148,10 @@ footer {
     padding: 10px;
     margin: auto;
 	border-width: thin;
+}
+
+#testlandingpage{
+    width: 33.33%;
+	padding-top: 1%;
+    margin: auto;
 }

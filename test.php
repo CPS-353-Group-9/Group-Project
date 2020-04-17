@@ -25,8 +25,8 @@ Test page for the Learn option.
 		<?php
 			if (isset($_SESSION['userId'])) // if logged in display the chapters
 			{
-				echo('<div id ="testpage">');
-				echo('<a class="button primary" href="test1.php">Begin</a>');	
+				echo('<div id ="testlandingpage">');
+				echo('<a class="button primary testbutton" href="test1.php">Begin</a>');	
 				echo('</div>');
 			}
 			else

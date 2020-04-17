@@ -1,0 +1,31 @@
+.primary{
+    background-color: #f58426; /*new paltz orange*/
+    color: #003e7e; /*new paltz blue*/
+    font-weight: bold;
+}  
+.secondary{
+    background-color: #003e7e; /*new paltz blue*/
+    color: #f58426; /*new paltz orange*/
+}
+.button:hover, .button.is-hovered {
+    border-color: #b5b5b5;
+    background-color: #f2f2f2;
+}
+a.navbar-item:hover{
+    border-color: #f58426; /*new paltz orange*/
+    background-color: #f2f2f2;
+}
+body{
+    background-color: hsl(27°, 91%, 85%); /*new paltz orange but lighter*/
+}
+#backgroundImage{
+	position: fixed;
+	text-align: center;
+    top: 0;
+    left: 0;
+    background-image: url("img/eap-logo1.png");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    opacity: 0.1;
+	z-index: -1;
+}

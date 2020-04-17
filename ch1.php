@@ -45,10 +45,9 @@ Test page for the Learn option.
 			
 				<p>Just like a regular calculator, we can use Python to perform operations on numbers and show us the results. </p>
 			</section>
+			
 		</div>
 
-		<br> <br>
-		
 		<footer>
 			<p>	<a class="link" href="explore.php">Go back to chapter list</a> <br> </p>
 		</footer>
