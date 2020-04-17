@@ -13,22 +13,17 @@ Test page for the Learn option.
 	<?php
 		include "header.php";
 	?>
-	<head>
-	<style>
-	</style>
-	</head>
 
 	<body>
-	
 		<?php include 'navbar.php';?>
-		<h3>Test Your Knowledge</h3>
+		<h3>Test 1 Results</h3>
 
 		<?php
 			if (isset($_SESSION['userId'])) // if logged in display the chapters
 			{
-				echo('<div id ="testlandingpage">');
-				echo('<a class="button primary testbutton" href="test1.php">Begin</a>');	
-				echo('</div>');
+				echo("This was a practice test, so it will not be graded.");
+				echo("<br/> Nice work regardless. <br/><br/>");
+				echo("<p>	<a class='link' href='index.php'>Return to the home page.</a> <br> </p>");
 			}
 			else
 			{
