@@ -36,10 +36,18 @@ if (isset($_POST['login-submit']))
 				if ($password == $row['Password']) // passwords match
 				{
 					session_start();
+					$_SESSION['email'] = $row['Email'];
 					$_SESSION['userId'] = $row['ID']; // getting the ID so we can later get their linked rpg info
 					$_SESSION['user'] = $row['Username']; // getting Username
 					$_SESSION['level'] = $row['Level'];
 					$_SESSION['create'] = $row['createDate'];
+					$_SESSION['first'] = $row['FName'];
+					$_SESSION['last'] = $row['LName'];
+					$_SESSION['mi'] = $row['MI'];
+					$_SESSION['country'] = $row['Country'];
+					$_SESSION['state'] = $row['State'];
+					$_SESSION['city'] = $row['City'];
+					$_SESSION['occ'] = $row['Occupation'];
 
 					header("Location: ../index.php?login=success"); // successful login
 					exit();
