@@ -18,14 +18,16 @@ Settings page for the Account option.
         <div id= "logform">
         <h3>Edit Your Profile</h3>
         <h6>Enter the information that you want to fill and hit submit to update you personal information</h6>
+        <h6>Anything starred must be filled</h6>
     </body>
     <form action = "includes/update_i.php" method="post">
         <?php
             if (isset($_SESSION['userId']))
             {
-                echo('
+                echo(
+                '<div id="setting-border" class="secondary">
                 
-                <div id = "fid1"><input type="text" name="prevuser" placeholder="Previous Username">
+                <div id = "fid1"><input type="text" name="prevuser" placeholder="Previous Username *">
                 <div id = "fid1"><input type="text" name="user" placeholder="Username">
                 <div id = "fid1"><input type="text" name="email" placeholder="Email">
                 <div id = "fid1"><input type="text" name="first" placeholder="First Name">
@@ -43,6 +45,14 @@ Settings page for the Account option.
                     </tr>
                 </table>
                 </div>');
+
+                if (isset($_GET["error"])) // getting the error checks from 'update_i.php'
+                {
+                    if ($_GET["error"] == "mustfillprevuserfield")
+                    {
+                        echo 'Must fill the previous username field';
+                    }
+                }
             }
             else
             {
