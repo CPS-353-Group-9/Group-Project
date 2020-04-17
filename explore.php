@@ -30,15 +30,18 @@ Explore page for the Learn option.
 				');
 
 				echo('<div id="explore-list" class="secondary">');
-					/* 
-					$ch = "ch";
-					$class = 1; //1 for primary, 2 for secondary
-					$link = "ch" . $ch . ".php"
-					for i up to user's level
-						change $ch to match	level
-						display link to $link - alternate primary/secondary class for each chapter button
-					*/
-					echo('<a class="button primary" href="ch1.php">Chapter 1</a>');
+					echo('<br>');
+					for ($ch = 1; $ch <= $_SESSION['level']; $ch++) { //for i up to user's level, change $ch to match	level
+						if($ch % 2 != 0){ //if $ch is odd
+							//display link to $link with primary class for chapter button
+							echo('<a class="button primary" href="ch'.$ch.'.php">Chapter '.$ch.'</a> <br> <br>');
+						}
+						else{ //if $ch is even
+							//display link to $link with secondary class for chapter button
+							echo('<a style="font-weight: bold;" class="button secondary" href="ch'.$ch.'.php">Chapter '.$ch.'</a> <br> <br>');
+						}
+					}
+					//echo('<a class="button primary" href="ch1.php">Chapter 1</a>');
 				echo('</div>');
 			}
 			else //if not logged in, encourage log-in or sign-up
