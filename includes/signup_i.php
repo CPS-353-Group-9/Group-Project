@@ -42,7 +42,7 @@ if (isset($_POST['signup-submit'])) // after sign up button press....
 	}
 	else 
 	{
-		$sql = "SELECT Username FROM User WHERE Username=?";
+		$sql = "SELECT user_name FROM user_profile WHERE user_name=?";
 		$stmt = mysqli_stmt_init($connect);
 
 		if (!mysqli_stmt_prepare($stmt, $sql)) // checking for a sql error
@@ -66,7 +66,7 @@ if (isset($_POST['signup-submit'])) // after sign up button press....
 			else // passed all checks, puts users entered credentials to database
 			{
 				// Inserting credentials into the DB
-				$sql = "INSERT INTO User (Username, Email, Password) VALUES (?, ?, ?)";
+				$sql = "INSERT INTO user_profile (user_name, email, password) VALUES (?, ?, ?)";
 				$stmt = mysqli_stmt_init($connect);
 
 				if (!mysqli_stmt_prepare($stmt, $sql))
