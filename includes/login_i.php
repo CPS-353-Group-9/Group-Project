@@ -14,7 +14,7 @@ if (isset($_POST['login-submit']))
 	}
 	else
 	{
-		$sql = "SELECT * FROM User WHERE Username=? OR Email=?;"; // grabs from username or email so user can use either field to log in
+		$sql = "SELECT * FROM user_profile WHERE user_name=? OR email=?;"; // grabs from username or email so user can use either field to log in
 		$stmt = mysqli_stmt_init($connect);
 
 		if (!mysqli_stmt_prepare($stmt, $sql))
@@ -33,21 +33,21 @@ if (isset($_POST['login-submit']))
 			{
 				//$pass_check = password_verify($password, $row['Password']);
 
-				if ($password == $row['Password']) // passwords match
+				if ($password == $row['password']) // passwords match
 				{
 					session_start();
-					$_SESSION['email'] = $row['Email'];
-					$_SESSION['userId'] = $row['ID']; // getting the ID so we can later get their linked rpg info
-					$_SESSION['user'] = $row['Username']; // getting Username
-					$_SESSION['level'] = $row['Level'];
-					$_SESSION['create'] = $row['createDate'];
-					$_SESSION['first'] = $row['FName'];
-					$_SESSION['last'] = $row['LName'];
-					$_SESSION['mi'] = $row['MI'];
-					$_SESSION['country'] = $row['Country'];
-					$_SESSION['state'] = $row['State'];
-					$_SESSION['city'] = $row['City'];
-					$_SESSION['occ'] = $row['Occupation'];
+					$_SESSION['email'] = $row['email'];
+					$_SESSION['userId'] = $row['UPID']; // getting the ID so we can later get their linked rpg info
+					$_SESSION['user'] = $row['user_name']; // getting Username
+					// $_SESSION['level'] = $row['Level']; TODO
+					$_SESSION['create'] = $row['account_creation'];
+					$_SESSION['first'] = $row['first_name'];
+					$_SESSION['last'] = $row['last_name'];
+					$_SESSION['mi'] = $row['middle_initial'];
+					$_SESSION['country'] = $row['country'];
+					$_SESSION['state'] = $row['state'];
+					$_SESSION['city'] = $row['city'];
+					$_SESSION['occ'] = $row['occupation'];
 
 					header("Location: ../index.php?login=success"); // successful login
 					exit();
