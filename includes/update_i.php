@@ -25,12 +25,12 @@
         else if(empty($username)) // if username field is empty, use same username
         {
             //update query
-            $sql = "UPDATE User SET Username = '$_POST[prevuser]', Email = '$_POST[email]', FName = '$_POST[first]', LName = '$_POST[last]', MI = '$_POST[middle]', Country = '$_POST[country]', State = '$_POST[state]', City = '$_POST[city]', Occupation = '$_POST[occupation]' WHERE Username = '$_POST[prevuser]'";
+            $sql = "UPDATE user_profile SET user_name = '$_POST[prevuser]', email = '$_POST[email]', first_name = '$_POST[first]', last_name = '$_POST[last]', middle_initial = '$_POST[middle]', country = '$_POST[country]', state = '$_POST[state]', city = '$_POST[city]', occupation = '$_POST[occupation]' WHERE user_name = '$_POST[prevuser]'";
 
             //execute
             if (mysqli_query($connect, $sql))
             {
-
+                /*
                 $sql = "SELECT * FROM User WHERE Username='$_POST[prevuser]'";
                 $row = mysqli_fetch_array($sql);
 
@@ -46,7 +46,7 @@
                 $_SESSION['state'] = $row['State'];
                 $_SESSION['city'] = $row['City'];
                 $_SESSION['occ'] = $row['Occupation'];
-
+                */
                 header("Location: ../settings.php?update=success");
                 exit();
             }
@@ -54,7 +54,7 @@
         else if(!empty($account) && !empty($username) && !empty($email) && !empty($fname) && !empty($lname) && !empty($mi) && !empty($country) && !empty($state) && !empty($city) && !empty($occupation)) // all fields filled
         {
             //update query
-            $sql = "UPDATE User SET Username = '$_POST[user]', Email = '$_POST[email]', FName = '$_POST[first]', LName = '$_POST[last]', MI = '$_POST[middle]', Country = '$_POST[country]', State = '$_POST[state]', City = '$_POST[city]', Occupation = '$_POST[occupation]' WHERE Username = '$_POST[prevuser]'";
+            $sql = "UPDATE user_profile SET user_name = '$_POST[prevuser]', email = '$_POST[email]', first_name = '$_POST[first]', last_name = '$_POST[last]', middle_initial = '$_POST[middle]', country = '$_POST[country]', state = '$_POST[state]', city = '$_POST[city]', occupation = '$_POST[occupation]' WHERE user_name = '$_POST[prevuser]'";
 
             //execute
             if (mysqli_query($connect, $sql))
