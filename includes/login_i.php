@@ -17,12 +17,12 @@ if (isset($_POST['login-submit']))
 		$sql = "SELECT * FROM user_profile WHERE user_name=? OR email=?;"; // grabs from username or email so user can use either field to log in
 		$stmt = mysqli_stmt_init($connect);
 
-		if (!mysqli_stmt_prepare($stmt, $sql))
+		if (!mysqli_stmt_prepare($stmt, $sql)) 
 		{
 			header("Location: ../login.php?error=sqlerror");
 			exit();	
 		}
-		else
+		else //if $sql is a valid query
 		{
 			mysqli_stmt_bind_param($stmt, "ss", $email, $email);
 			mysqli_stmt_execute($stmt);
@@ -39,7 +39,6 @@ if (isset($_POST['login-submit']))
 					$_SESSION['email'] = $row['email'];
 					$_SESSION['userId'] = $row['UPID']; // getting the ID so we can later get their linked rpg info
 					$_SESSION['user'] = $row['user_name']; // getting Username
-					// $_SESSION['level'] = $row['Level']; TODO
 					$_SESSION['create'] = $row['account_creation'];
 					$_SESSION['first'] = $row['first_name'];
 					$_SESSION['last'] = $row['last_name'];

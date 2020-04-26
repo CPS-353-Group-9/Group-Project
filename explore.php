@@ -11,7 +11,7 @@ Explore page for the Learn option.
 <!DOCTYPE html>
 <html>
 	<?php
-		include "header.php";
+		include 'header.php';
 	?>
 
 	<body>
@@ -19,8 +19,7 @@ Explore page for the Learn option.
 		<h3>Explore The Text</h3>
 		
 		<?php
-			if (isset($_SESSION['userId'])) // if logged in display the chapters
-			{
+			if (isset($_SESSION['userId'])) { // if logged in display the chapters			
 				echo ('
 					<div class="textbook-body">
 						<h4>Welcome!</h4>
@@ -43,11 +42,9 @@ Explore page for the Learn option.
 					}
 				echo('</div>');
 			}
-			else //if not logged in, encourage log-in or sign-up
-			{
+			else { //if not logged in, encourage log-in or sign-up
 				echo ('<p> <a class="link" href="signup.php">Create an account</a> or <a class="link" href="login.php">log in</a> to view the interactive textbook and start learning Python! </p>');
 			}
 		?>
-
 	</body>
 </html>

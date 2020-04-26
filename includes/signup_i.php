@@ -50,7 +50,7 @@ if (isset($_POST['signup-submit'])) // after sign up button press....
 			header("Location: ../signup.php?error=sqlerror");
 			exit();
 		}
-		else 
+		else //if $sql is a valid query
 		{
 			mysqli_stmt_bind_param($stmt, "s", $username);
 			mysqli_stmt_execute($stmt);
