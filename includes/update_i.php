@@ -30,6 +30,20 @@
             //execute
             if (mysqli_query($connect, $sql))
             {
+                $sql = "SELECT * FROM user_profile INNER JOIN user_stats ON user_profile.UPID = user_stats.UPID WHERE user_profile.user_name = '$_POST[prevuser]'";
+                $result = mysqli_query($connect, $sql);
+
+                if (mysqli_num_rows($result) > 0)
+                {
+                    $row = mysqli_fetch_array($result);
+
+                    session_start();
+                    
+                    $_SESSION['user_level'] = $row['user_stats.user_level'];
+                }
+                
+
+                
                 /*
                 $sql = "SELECT * FROM User WHERE Username='$_POST[prevuser]'";
                 $row = mysqli_fetch_array($sql);
