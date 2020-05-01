@@ -54,7 +54,7 @@ Settings page for the Account option.
 						<th> <h6> USERNAME: </h6> </th>
 						<th> <h6> '. $_SESSION['user'] .' </h6> </th>
 						<th> <h6> LEVEL:  </h6> </th>
-						<th> <h6> '. $_SESSION['level'] .' </h6> </th>
+						<th> <h6> '. $_SESSION['user_level'] .' </h6> </th>
 					</tr>
 
 					<tr>
