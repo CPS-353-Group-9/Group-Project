@@ -14,7 +14,7 @@
 	$logged_in =
     ('<nav class="navbar" role="navigation" aria-label="main navigation" style="background-color: #f58426;">
         <div class="navbar-brand">
-            <a class="navbar-item" href="index.php" style="height: 50px;">
+            <a class="" href="index.php" style="height: 50px;">
             <img src="img\EAPlogo.png" alt="EAP Logo" style="height: 50px; padding: 5px 10px 0 10px;">
             </a>
         
