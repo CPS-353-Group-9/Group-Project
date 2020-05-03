@@ -14,8 +14,8 @@
 	$logged_in =
     ('<nav class="navbar" role="navigation" aria-label="main navigation" style="background-color: #f58426;">
         <div class="navbar-brand">
-            <a class="navbar-item" href="index.php">
-                <img src="img\eap-logo1.png" alt="Group 9 Logo " width="80" height="28">
+            <a class="navbar-item" href="index.php" style="height: 50px;">
+            <img src="img\EAPlogo.png" alt="EAP Logo" style="height: 50px; padding: 5px 10px 0 10px;">
             </a>
         
             <a :class="{ \'is-active\':isOpen }" @click="isOpen = !isOpen" role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false">
@@ -91,8 +91,8 @@
     $logged_out = 
     ('<nav class="navbar" role="navigation" aria-label="main navigation" style="background-color: #f58426;">
         <div class="navbar-brand">
-            <a class="navbar-item" href="index.php">
-                <img src="img\eap-logo1.png" alt="Group 9 Logo " width="80" height="28">
+            <a class="" href="index.php" style="height: 50px;">
+                <img src="img\EAPlogo.png" alt="EAP Logo" style="height: 50px; padding: 5px 10px 0 10px;">
             </a>
         
             <a :class="{ \'is-active\':isOpen }" @click="isOpen = !isOpen" role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false">

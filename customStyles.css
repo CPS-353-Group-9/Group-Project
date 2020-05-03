@@ -99,8 +99,7 @@ footer {
 #statement1{
 	padding-top: 14px;
 	padding-left: 20%;
-	padding-right: 20%;
-	
+    padding-right: 20%;	
 }
 
 #logform{
@@ -154,4 +153,9 @@ footer {
     width: 33.33%;
 	padding-top: 1%;
     margin: auto;
+}
+
+#meet-the-team{
+    position: absolute;
+    bottom: 5%;
 }
