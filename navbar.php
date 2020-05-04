@@ -14,31 +14,32 @@
 	$logged_in =
     ('<nav class="navbar" role="navigation" aria-label="main navigation" style="background-color: #f58426;">
         <div class="navbar-brand">
-            <a class="" href="index.php" style="height: 50px;">
+            <a href="index.php" style="height: 50px;">
             <img src="img\EAPlogo.png" alt="EAP Logo" style="height: 50px; padding: 5px 10px 0 10px;">
             </a>
         
-            <a :class="{ \'is-active\':isOpen }" @click="isOpen = !isOpen" role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false">
+            <a role="button" class="navbar-burger burger" data-target="navbar-menu" aria-label="menu" aria-expanded="false">
                 <span aria-hidden="true"></span>
                 <span aria-hidden="true"></span>
                 <span aria-hidden="true"></span>
             </a>
         </div>
     
-        <div id=:class="{ \'is-active\':isOpen }" class="navbar-menu">
+        <div id="navbar-menu" class="navbar-menu has-text-justified">
             <div class="navbar-start">
                 <a class="navbar-item primary" href="index.php">
                 Home
                 </a>
-        
+
                 <div class="navbar-item has-dropdown is-hoverable">
-                    <a class="navbar-link primary" href="explore.php">
+                    <a class="navbar-link primary">
                         Learn
                     </a>
-                    <div class="navbar-dropdown">
+                    <div class="navbar-dropdown secondary">
                         <a class="navbar-item secondary" href="explore.php">
                         Explore The Text
                         </a>
+                        <hr class="navbar-divider">
                         <a class="navbar-item secondary" href="test.php">
                         Test Your Knowledge
                         </a>
@@ -81,41 +82,57 @@
     </nav>
 
     <script>
-        export default {
-            data: ()=>({
-                isOpen: false
-            })
-        }
+        document.addEventListener("DOMContentLoaded", () => {
+            // Get all "navbar-burger" elements
+            const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll(".navbar-burger"), 0);
+        
+            // Check if there are any navbar burgers
+            if ($navbarBurgers.length > 0) {
+                // Add a click event on each of them
+                $navbarBurgers.forEach( el => {
+                    el.addEventListener("click", () => {
+                        // Get the target from the "data-target" attribute
+                        const target = el.dataset.target;
+                        const $target = document.getElementById(target);
+                
+                        // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
+                        el.classList.toggle("is-active");
+                        $target.classList.toggle("is-active");
+                    });
+                });
+            }
+        });
     </script>');
 
     $logged_out = 
     ('<nav class="navbar" role="navigation" aria-label="main navigation" style="background-color: #f58426;">
         <div class="navbar-brand">
-            <a class="" href="index.php" style="height: 50px;">
+            <a href="index.php" style="height: 50px;">
                 <img src="img\EAPlogo.png" alt="EAP Logo" style="height: 50px; padding: 5px 10px 0 10px;">
             </a>
         
-            <a :class="{ \'is-active\':isOpen }" @click="isOpen = !isOpen" role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false">
+            <a role="button" class="navbar-burger burger" data-target="navbar-menu" aria-label="menu" aria-expanded="false">
                 <span aria-hidden="true"></span>
                 <span aria-hidden="true"></span>
                 <span aria-hidden="true"></span>
             </a>
         </div>
     
-        <div id=:class="{ \'is-active\':isOpen }" class="navbar-menu">
+        <div id="navbar-menu" class="navbar-menu has-text-justified">
             <div class="navbar-start">
                 <a class="navbar-item primary" href="index.php">
                 Home
                 </a>
-        
+
                 <div class="navbar-item has-dropdown is-hoverable">
-                    <a class="navbar-link primary" href="explore.php">
+                    <a class="navbar-link primary">
                         Learn
                     </a>
-                    <div class="navbar-dropdown">
+                    <div class="navbar-dropdown secondary">
                         <a class="navbar-item secondary" href="explore.php">
                         Explore The Text
                         </a>
+                        <hr class="navbar-divider">
                         <a class="navbar-item secondary" href="test.php">
                         Test Your Knowledge
                         </a>
@@ -159,11 +176,26 @@
     </nav>
 
     <script>
-        export default {
-            data: ()=>({
-                isOpen: false
-            })
-        }
+        document.addEventListener("DOMContentLoaded", () => {
+            // Get all "navbar-burger" elements
+            const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll(".navbar-burger"), 0);
+        
+            // Check if there are any navbar burgers
+            if ($navbarBurgers.length > 0) {
+                // Add a click event on each of them
+                $navbarBurgers.forEach( el => {
+                    el.addEventListener("click", () => {
+                        // Get the target from the "data-target" attribute
+                        const target = el.dataset.target;
+                        const $target = document.getElementById(target);
+                
+                        // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
+                        el.classList.toggle("is-active");
+                        $target.classList.toggle("is-active");
+                    });
+                });
+            }
+        });
     </script>');
 
     if (isset($_SESSION['userId'])){ //if logged in, do not show login or signup buttons
