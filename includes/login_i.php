@@ -47,7 +47,7 @@ if (isset($_POST['login-submit']))
 					$_SESSION['state'] = $row['state'];
 					$_SESSION['city'] = $row['city'];
 					$_SESSION['occ'] = $row['occupation'];
-					$_SESSION['user_level'] = $row['user_stats.user_level'];
+					$_SESSION['user_level'] = $row['user_level'];
 
 					header("Location: ../index.php?login=success"); // successful login
 					exit();
