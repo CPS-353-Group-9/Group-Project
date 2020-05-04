@@ -22,66 +22,71 @@ Test page for the Learn option.
 			if (isset($_SESSION['userId'])) // if logged in display the chapters
 			{
 				echo('<div class="textbook-body">');
+				
+				echo('<form action="test1res.php" method="post" id="quiz">');
 
 				echo("<h6>" . "What does a variable do?" . "</h6>");
 				
-				echo('<input type="radio" id="1A" name="1" value = 0 >
-				<label for="1A">Store different types of data.</label><br>');
-				echo('<input type="radio" id="1B" name="1" value = 0 >
-				<label for="1B">A feeling.</label><br>');
-				echo('<input type="radio" id="1C" name="1" value = 0 >
-				<label for="1C">Not real.</label><br>');
-				echo('<input type="radio" id="1D" name="1" value = 0 >
-				<label for="1D">Ummmmmm</label><br>');
+				echo('<input type="radio" id="1" name="1" id="1-A" value = "A"  >
+				<label for="1-A">Store different types of data.</label><br>');
+				echo('<input type="radio" id="1" name="1" id="1-B" value = "B" >
+				<label for="1-B">A feeling.</label><br>');
+				echo('<input type="radio" id="1" name="1" id="1-C" value = "C" >
+				<label for="1-C">Not real.</label><br>');
+				echo('<input type="radio" id="1" name="1" id="1-D" value = "D" >
+				<label for="1-D">Ummmmmm</label><br>');
 				
 				echo("<br/><h6>" . "What does a print statement do?" . "</h6>");
 				
-					echo('<input type="radio" id="1A" name="2" value = 0 >
-				<label for="1A">Outputs something to the console.</label><br>');
-				echo('<input type="radio" id="1B" name="2" value = 0 >
-				<label for="1B">Probably a simulation</label><br>');
-				echo('<input type="radio" id="1C" name="2" value = 0 >
-				<label for="1C">I\'m bored</label><br>');
-				echo('<input type="radio" id="1D" name="2" value = 0 >
-				<label for="1D">Answer #4</label><br>');
+					echo('<input type="radio" id="2" name="2" value = "A" >
+				<label for="2-A">Outputs something to the console.</label><br>');
+				echo('<input type="radio" id="2" name="2" value = "B" >
+				<label for="2-B">Probably a simulation</label><br>');
+				echo('<input type="radio" id="2" name="2" value = "C" >
+				<label for="2-C">I\'m bored</label><br>');
+				echo('<input type="radio" id="2" name="2" value = "D" >
+				<label for="2-D">Answer #4</label><br>');
 				
 				echo("<br/><h6>" . "Can Python be used as a calculator?" . "</h6>");
 				
-					echo('<input type="radio" id="1A" name="3" value = 0 >
-				<label for="1A">Yes</label><br>');
-				echo('<input type="radio" id="1B" name="3" value = 0 >
-				<label for="1B">4</label><br>');
-				echo('<input type="radio" id="1C" name="3" value = 0 >
-				<label for="1C">3</label><br>');
-				echo('<input type="radio" id="1D" name="3" value = 0 >
-				<label for="1D">Dog</label><br>');
+					echo('<input type="radio" id="3" name="3" value = "A" >
+				<label for="3-A">Yes</label><br>');
+				echo('<input type="radio" id="3" name="3" value = "B" >
+				<label for="3-B">4</label><br>');
+				echo('<input type="radio" id="3" name="3" value = "C" >
+				<label for="3-C">3</label><br>');
+				echo('<input type="radio" id="3" name="3" value = "D" >
+				<label for="3-D">Dog</label><br>');
 				
 				echo("<br/><h6>" . "What is programming?" . "</h6>");
 				
-					echo('<input type="radio" id="1A" name="4" value = 0 >
-				<label for="1A">Telling the computer to do something.</label><br>');
-				echo('<input type="radio" id="1B" name="4" value = 0 >
-				<label for="1B">Facebook machine.</label><br>');
-				echo('<input type="radio" id="1C" name="4" value = 0 >
-				<label for="1C">Youtube machine.</label><br>');
-				echo('<input type="radio" id="1D" name="4" value = 0 >
-				<label for="1D">Big calculator.</label><br>');
+					echo('<input type="radio" id="4" name="4" value = "A" >
+				<label for="4-A">Telling the computer to do something.</label><br>');
+				echo('<input type="radio" id="4" name="4" value = "B" >
+				<label for="4-B">Facebook machine.</label><br>');
+				echo('<input type="radio" id="4" name="4" value = "C" >
+				<label for="4-C">Youtube machine.</label><br>');
+				echo('<input type="radio" id="4" name="4" value = "D" >
+				<label for="4-D">Big calculator.</label><br>');
 				
 				echo("<br/><h6>" . "What is the name of this website?" . "</h6>");
 				
-					echo('<input type="radio" id="1A" name="4" value = 0 >
-				<label for="1A">Easy As Pie-thon</label><br>');
-				echo('<input type="radio" id="1B" name="4" value = 0 >
-				<label for="1B">The sky</label><br>');
-				echo('<input type="radio" id="1C" name="4" value = 0 >
-				<label for="1C">Not your bro.</label><br>');
-				echo('<input type="radio" id="1D" name="4" value = 0 >
-				<label for="1D">My day has been fraught with conflict.</label><br>');
+					echo('<input type="radio" id="5" name="5" value = "A" >
+				<label for="5-A">Easy As Pie-thon</label><br>');
+				echo('<input type="radio" id="5" name="5" value = "B" >
+				<label for="5-B">The sky</label><br>');
+				echo('<input type="radio" id="5" name="5" value = "C" >
+				<label for="5-C">Not your bro.</label><br>');
+				echo('<input type="radio" id="5" name="5" value = "D" >
+				<label for="5-D">My day has been fraught with conflict.</label><br>');
 				echo('<br/>');
 				
 				echo('</div>');
-				echo('<br/><a class="button primary testbutton2" href="test1res.php">Submit</a>');	
+				echo('<br/><input type="submit" class="button primary testbutton2"></a>');	
 				echo('<br/><br/>');
+				
+				echo('</form>');
+				
 			}
 			else
 			{
