@@ -30,7 +30,7 @@ Explore page for the Learn option.
 
 				echo('<div id="explore-list" class="secondary">');
 					echo('<br>');
-					for ($ch = 1; $ch <= $_SESSION['level']; $ch++) { //for i up to user's level, change $ch to match level
+					for ($ch = 1; $ch <= $_SESSION['user_level']; $ch++) { //for i up to user's level, change $ch to match level
 						if($ch % 2 != 0){ //if $ch is odd
 							//display link to chapter with primary class for chapter button
 							echo('<a class="button primary" href="ch'.$ch.'.php">Chapter '.$ch.'</a> <br> <br>');
