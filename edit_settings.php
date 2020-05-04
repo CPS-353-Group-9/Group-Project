@@ -28,7 +28,7 @@ Settings page for the Account option.
                 '<div id="setting-border" class="secondary">
                 
                 <div id = "fid1"><input type="text" name="prevuser" placeholder="Previous Username *">
-                <div id = "fid1"><input type="text" name="user" placeholder="Username">
+                <div id = "fid1"><input type="text" name="user" placeholder="New Username">
                 <div id = "fid1"><input type="text" name="email" placeholder="Email">
                 <div id = "fid1"><input type="text" name="first" placeholder="First Name">
                 <div id = "fid1"><input type="text" name="last" placeholder="Last Name">
