@@ -23,10 +23,10 @@ Test page for the Learn option.
 			{
 				echo('<div class="textbook-body">');
 
-				echo("<h6>" . "What is love?" . "</h6>");
+				echo("<h6>" . "What does a variable do?" . "</h6>");
 				
 				echo('<input type="radio" id="1A" name="1" value = 0 >
-				<label for="1A">Baby don\'t hurt me.</label><br>');
+				<label for="1A">Store different types of data.</label><br>');
 				echo('<input type="radio" id="1B" name="1" value = 0 >
 				<label for="1B">A feeling.</label><br>');
 				echo('<input type="radio" id="1C" name="1" value = 0 >
@@ -34,10 +34,10 @@ Test page for the Learn option.
 				echo('<input type="radio" id="1D" name="1" value = 0 >
 				<label for="1D">Ummmmmm</label><br>');
 				
-				echo("<br/><h6>" . "What is life?" . "</h6>");
+				echo("<br/><h6>" . "What does a print statement do?" . "</h6>");
 				
 					echo('<input type="radio" id="1A" name="2" value = 0 >
-				<label for="1A">Dunno dude</label><br>');
+				<label for="1A">Outputs something to the console.</label><br>');
 				echo('<input type="radio" id="1B" name="2" value = 0 >
 				<label for="1B">Probably a simulation</label><br>');
 				echo('<input type="radio" id="1C" name="2" value = 0 >
@@ -45,10 +45,10 @@ Test page for the Learn option.
 				echo('<input type="radio" id="1D" name="2" value = 0 >
 				<label for="1D">Answer #4</label><br>');
 				
-				echo("<br/><h6>" . "What is 2+2?" . "</h6>");
+				echo("<br/><h6>" . "Can Python be used as a calculator?" . "</h6>");
 				
 					echo('<input type="radio" id="1A" name="3" value = 0 >
-				<label for="1A">A</label><br>');
+				<label for="1A">Yes</label><br>');
 				echo('<input type="radio" id="1B" name="3" value = 0 >
 				<label for="1B">4</label><br>');
 				echo('<input type="radio" id="1C" name="3" value = 0 >
@@ -56,10 +56,10 @@ Test page for the Learn option.
 				echo('<input type="radio" id="1D" name="3" value = 0 >
 				<label for="1D">Dog</label><br>');
 				
-				echo("<br/><h6>" . "What is a computer?" . "</h6>");
+				echo("<br/><h6>" . "What is programming?" . "</h6>");
 				
 					echo('<input type="radio" id="1A" name="4" value = 0 >
-				<label for="1A">Videogame machine.</label><br>');
+				<label for="1A">Telling the computer to do something.</label><br>');
 				echo('<input type="radio" id="1B" name="4" value = 0 >
 				<label for="1B">Facebook machine.</label><br>');
 				echo('<input type="radio" id="1C" name="4" value = 0 >
@@ -67,10 +67,10 @@ Test page for the Learn option.
 				echo('<input type="radio" id="1D" name="4" value = 0 >
 				<label for="1D">Big calculator.</label><br>');
 				
-				echo("<br/><h6>" . "What is up, bro?" . "</h6>");
+				echo("<br/><h6>" . "What is the name of this website?" . "</h6>");
 				
 					echo('<input type="radio" id="1A" name="4" value = 0 >
-				<label for="1A">Nmu?</label><br>');
+				<label for="1A">Easy As Pie-thon</label><br>');
 				echo('<input type="radio" id="1B" name="4" value = 0 >
 				<label for="1B">The sky</label><br>');
 				echo('<input type="radio" id="1C" name="4" value = 0 >
