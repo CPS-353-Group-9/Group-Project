@@ -39,7 +39,7 @@
 
                     session_start();
                     
-                    $_SESSION['user_level'] = $row['user_stats.user_level'];
+                    $_SESSION['user_level'] = $row['user_level'];
                 }
                 
 
