@@ -1,4 +1,5 @@
 <?php
+
     // handles the unpdating user info process
     if(isset($_POST['edit-submit']))
     {
@@ -37,8 +38,21 @@
                 {
                     $row = mysqli_fetch_array($result);
 
-                    session_start();
+                    session_unset(); // deletes all the values from current session
+                    session_destroy(); // destroys current session on the website (logs out user so a new user with different values can use the website)
+                    session_start(); // restarts the session
                     
+                    $_SESSION['email'] = $row['email'];
+					$_SESSION['userId'] = $row['UPID']; // getting the ID so we can later get their linked rpg info
+					$_SESSION['user'] = $row['user_name']; // getting Username
+					$_SESSION['create'] = $row['account_creation'];
+					$_SESSION['first'] = $row['first_name'];
+					$_SESSION['last'] = $row['last_name'];
+					$_SESSION['mi'] = $row['middle_initial'];
+					$_SESSION['country'] = $row['country'];
+					$_SESSION['state'] = $row['state'];
+					$_SESSION['city'] = $row['city'];
+					$_SESSION['occ'] = $row['occupation'];
                     $_SESSION['user_level'] = $row['user_level'];
                 }
                 
