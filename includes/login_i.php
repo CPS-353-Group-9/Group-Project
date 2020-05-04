@@ -14,7 +14,7 @@ if (isset($_POST['login-submit']))
 	}
 	else
 	{
-		$sql = "SELECT * FROM user_profile WHERE user_name=? OR email=?;"; // grabs from username or email so user can use either field to log in
+		$sql = "SELECT * FROM user_profile INNER JOIN user_stats ON user_profile.UPID = user_stats.UPID WHERE user_name=? OR email=?;"; // grabs from username or email so user can use either field to log in
 		$stmt = mysqli_stmt_init($connect);
 
 		if (!mysqli_stmt_prepare($stmt, $sql)) 
@@ -47,6 +47,7 @@ if (isset($_POST['login-submit']))
 					$_SESSION['state'] = $row['state'];
 					$_SESSION['city'] = $row['city'];
 					$_SESSION['occ'] = $row['occupation'];
+					$_SESSION['user_level'] = $row['user_stats.user_level'];
 
 					header("Location: ../index.php?login=success"); // successful login
 					exit();
