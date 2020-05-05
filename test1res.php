@@ -21,6 +21,7 @@ Test page for the Learn option.
 		<?php
 			if (isset($_SESSION['userId'])) // if logged in display the chapters
 			{
+				
 				$totalCorrect = 0;
 				
 				if (isset($_POST['1'])){
@@ -55,10 +56,10 @@ Test page for the Learn option.
 					echo("You passed the test. Good job! <br/><br/>");
 				}
 				else{
-					echo( "You failed the test. Study more and try again later. <br/><br/>");
+					echo( "You failed the test. Study more and try again later. <br/> ");
 				}
 				
-				echo("<p> <a class='link' href='index.php'>Return to the home page.</a> </p>");
+				echo("<br/><p> <a class='link' href='index.php'>Return to the home page.</a> </p>");
 	
 			}
 			else
