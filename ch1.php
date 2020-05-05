@@ -44,6 +44,7 @@ Test page for the Learn option.
 				<h6 style="padding-bottom: none">Just a little math, don't be scared :)</h6>
 			
 				<p>Just like a regular calculator, we can use Python to perform operations on numbers and show us the results. </p>
+				<br/>
 			</section>
 			
 		</div>

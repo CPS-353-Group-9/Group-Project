@@ -156,6 +156,6 @@ footer {
 }
 
 #meet-the-team{
-    position: absolute;
+	position: static;
     bottom: 5%;
 }
