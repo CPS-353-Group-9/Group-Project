@@ -42,7 +42,9 @@ a.link:hover{
 }
 
 .keywords {
-    font: bold italic;
+    font-weight: bold;
+    font-style: italic;
+    color: #f58426;
 }
 
 .testbutton{

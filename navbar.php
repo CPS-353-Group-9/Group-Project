@@ -50,10 +50,11 @@
                     <a class="navbar-link primary" href="stats.php">
                         Account
                     </a>
-                    <div class="navbar-dropdown">
+                    <div class="navbar-dropdown secondary">
                         <a class="navbar-item secondary" href="stats.php">
                         Stats
                         </a>
+                        <hr class="navbar-divider">
                         <a class="navbar-item secondary" href="settings.php">
                         Settings
                         </a>
@@ -143,10 +144,11 @@
                     <a class="navbar-link primary" href="stats.php">
                         Account
                     </a>
-                    <div class="navbar-dropdown">
+                    <div class="navbar-dropdown secondary">
                         <a class="navbar-item secondary" href="stats.php">
                         Stats
                         </a>
+                        <hr class="navbar-divider">
                         <a class="navbar-item secondary" href="settings.php">
                         Settings
                         </a>
