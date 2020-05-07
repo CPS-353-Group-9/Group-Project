@@ -18,19 +18,106 @@
         $occupation = $_POST['occupation'];
 
         
-        if (empty($account))
+        if (empty($account)) // user must fill the previous username field
         {
             header("Location: ../edit_settings.php?error=mustfillprevuserfield");
 		    exit();		
         }
-        else if(empty($username)) // if username field is empty, use same username
+        else
         {
-            //update query
-            $sql = "UPDATE user_profile SET user_name = '$_POST[prevuser]', email = '$_POST[email]', first_name = '$_POST[first]', last_name = '$_POST[last]', middle_initial = '$_POST[middle]', country = '$_POST[country]', state = '$_POST[state]', city = '$_POST[city]', occupation = '$_POST[occupation]' WHERE user_name = '$_POST[prevuser]'";
+            if(empty($username)) // if username field empty, break. else change username to new inputed username 
+            {
+                echo "";
+            }
+            else
+            {
+                $sql = "UPDATE user_profile SET user_name = '$_POST[user]' WHERE user_name = '$_POST[prevuser]'";
+                mysqli_query($connect, $sql);
+            }
 
-            //execute
+            if (empty($email)) // if email field is empty, break. else change the email on that account
+            {
+                echo "";
+            }
+            else
+            {
+                $sql = "UPDATE user_profile SET email = '$_POST[email]' WHERE user_name = '$_POST[prevuser]'";
+                mysqli_query($connect, $sql);
+            }
+
+            if (empty($fname)) // if first name field is empty, break. else change the first name on that account
+            {
+                echo "";
+            }
+            else
+            {
+                $sql = "UPDATE user_profile SET first_name = '$_POST[first]' WHERE user_name = '$_POST[prevuser]'";
+                mysqli_query($connect, $sql);
+            }
+
+            if (empty($lname)) // if last name field is empty, break. else change the last name on that account
+            {
+                echo ""; 
+            }
+            else
+            {
+                $sql = "UPDATE user_profile SET last_name = '$_POST[last]' WHERE user_name = '$_POST[prevuser]'";
+                mysqli_query($connect, $sql);
+            }
+
+            if (empty($mi)) // if middle initial field is empty, break. else change the middle initial on that account
+            {
+                echo "";
+            }
+            else
+            {
+                $sql = "UPDATE user_profile SET middle_initial = '$_POST[middle]' WHERE user_name = '$_POST[prevuser]'";
+                mysqli_query($connect, $sql);
+            }
+
+            if (empty($country)) // if country field is empty, break. else change the country field on that account
+            {
+                echo "";
+            }
+            else
+            {
+                $sql = "UPDATE user_profile SET country = '$_POST[country]' WHERE user_name = '$_POST[prevuser]'";
+                mysqli_query($connect, $sql);
+            }
+
+            if (empty($state)) // if state field is empty, break. else change the country field on that account
+            {
+                echo "";
+            }
+            else
+            {
+                $sql = "UPDATE user_profile SET state = '$_POST[state]' WHERE user_name = '$_POST[prevuser]'";
+                mysqli_query($connect, $sql);
+            }
+
+            if (empty($city)) // if city is empty, break. else change the city field on that account
+            {
+                echo "";
+            }
+            else
+            {
+                $sql = "UPDATE user_profile SET city = '$_POST[city]' WHERE user_name = '$_POST[prevuser]'";
+                mysqli_query($connect, $sql);
+            }
+
+            if (empty($occupation)) // if occupation field is empty, break. else change the occupation field on that account
+            {
+                echo "";
+            }
+            else
+            {
+                $sql = "UPDATE user_profile SET occupation = '$_POST[occupation]' WHERE user_name = '$_POST[prevuser]'";
+                mysqli_query($connect, $sql);
+            }
+
             if (mysqli_query($connect, $sql))
             {
+                // restart the session to update the fields on the user account page
                 $sql = "SELECT * FROM user_profile INNER JOIN user_stats ON user_profile.UPID = user_stats.UPID WHERE user_profile.user_name = '$_POST[prevuser]'";
                 $result = mysqli_query($connect, $sql);
 
@@ -58,6 +145,7 @@
                 header("Location: ../settings.php?update=success");
                 exit();
             }
+
         }
     }
     else if(isset($_POST['back-submit']))
