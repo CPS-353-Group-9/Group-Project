@@ -4,32 +4,7 @@
 
 Settings page for the Account option.
 
-*/
-/*
-	$sql = "SELECT * FROM User";
-	$stmt = mysqli_stmt_init($connect);
-
-	if (!mysqli_stmt_prepare($stmt, $sql))
-	{
-		header("Location: settings.php?error=sqlerror");
-		exit();	
-	}
-	else
-	{
-		$result = mysqli_stmt_get_result($stmt);
-
-		if ($row = mysqli_fetch_assoc($result))
-		{
-			$_SESSION['first'] = $row['FNAME'];
-            $_SESSION['last'] = $row['Last'];
-            $_SESSION['mi'] = $row['MI'];
-            $_SESSION['country'] = $row['Country'];
-            $_SESSION['state'] = $row['State'];
-            $_SESSION['city'] = $row['City'];
-            $_SESSION['occ'] = $row['Occupation'];
-		}
-	}
-*/
+*/	
 ?>
 
 <!DOCTYPE html>
@@ -103,11 +78,100 @@ Settings page for the Account option.
 					</table>
 					</div>');
 				// BADGES
+
+				require "includes/db_i.php"; // database connection file
+
+				$sql = "SELECT * FROM user_profile INNER JOIN user_badges ON user_profile.UPID = user_badges.UPID WHERE user_profile.user_name = '$_SESSION[user]'";
+				$result = mysqli_query($connect, $sql);
+			
+				if (mysqli_num_rows($result) > 0)
+				{
+				$row = mysqli_fetch_array($result);
+			
+					$_SESSION['b1'] = $row['badge_1'];
+					$_SESSION['b2'] = $row['badge_2'];
+					$_SESSION['b3'] = $row['badge_3'];
+					$_SESSION['b4'] = $row['badge_4'];
+					$_SESSION['b5'] = $row['badge_5'];
+					$_SESSION['b6'] = $row['badge_6'];
+					$_SESSION['b7'] = $row['badge_7'];
+					$_SESSION['b8'] = $row['badge_8'];
+					$_SESSION['b9'] = $row['badge_9'];
+					$_SESSION['b10'] = $row['badge_10'];
+			
+				}
+
+				$locked = ('<th> <img src="img/SE_locked.png" height="50" width="50" /> </th>');
+				$complete_ch1 = ('<th> <img src="img/SE_chap1.png" height="50" width="50" /> </th>');
+				$complete_ch2 = ('<th> <img src="img/SE_chap2.png" height="50" width="50" /> </th>');
+				$lvl2 = ('<th> <img src="img/SE_lvl_2.png" height="50" width="50" /> </th>');
+				$perfect_score = ('<th> <img src="img/SE_100.png" height="50" width="50" /> </th>');
+				
 				echo(
 					'<div id="setting-border" class="secondary">
 
 					<h4>BADGES</h4>
+					<table align = "center">
 
+					<tr>');
+						if ($_SESSION['b1'] == false) // b1 = completing chapter 1
+						{
+							echo $locked;
+						}
+						else if($_SESSION['b1'] == true)
+						{
+							echo $complete_ch1;
+						}
+
+						if ($_SESSION['b2'] == false) // b2 = completing chapter 2
+						{
+							echo $locked;
+						}
+						else if($_SESSION['b2'] == true)
+						{
+							echo $complete_ch2;
+						}
+
+						if ($_SESSION['b3'] == false) // b3 = reaching level 2
+						{
+							echo $locked;
+						}
+						else if($_SESSION['b3'] == true)
+						{
+							echo $lvl2;
+						}
+
+						if ($_SESSION['b4'] == false) // b4 = getting a perfect test score for the first time
+						{
+							echo $locked;
+						}
+						else if($_SESSION['b4'] == true)
+						{
+							echo $perfect_score;
+						}
+
+						echo $locked; // placeholder
+
+					// the next 10 badges are placeholders
+					echo('</tr>
+					
+					<tr> 
+						<th> <img src="img/SE_locked.png" height="50" width="50" /> </th>
+						<th> <img src="img/SE_locked.png" height="50" width="50" /> </th>
+						<th> <img src="img/SE_locked.png" height="50" width="50" /> </th>
+						<th> <img src="img/SE_locked.png" height="50" width="50" /> </th>
+						<th> <img src="img/SE_locked.png" height="50" width="50" /> </th>
+					</tr>
+
+					<tr>
+						<th> <img src="img/SE_locked.png" height="50" width="50" /> </th>
+						<th> <img src="img/SE_locked.png" height="50" width="50" /> </th>
+						<th> <img src="img/SE_locked.png" height="50" width="50" /> </th>
+						<th> <img src="img/SE_locked.png" height="50" width="50" /> </th>
+						<th> <img src="img/SE_locked.png" height="50" width="50" /> </th>
+					</tr>
+
+					</table>
 				</div>');
 			}
 			else
