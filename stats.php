@@ -32,17 +32,21 @@ Stats page for the Account option.
 				$total = 0.0;
 				$test_count = 0;
 				
-				$sql = "SELECT test_1, test_2, test_3, test_4, test_5 FROM user_grades WHERE UPID = '$_SESSION[userId]'";
+				$sql = "SELECT * FROM user_grades WHERE UPID = '$_SESSION[userId]'";
 				$result = mysqli_query($connect, $sql);
 				
 				$row = mysqli_fetch_assoc($result);
 				
+				$count = 0;
+				
 				foreach($row as &$value){
-					if ($value != null){
+					if ( ($value != null) && ($count > 0) ){
 						$total += $value;
 						$test_count += 1;
 						echo '<p> Test ' . $test_count . ' Grade: ' . $value . '</p>';
 					}
+					
+					$count += 1;
 				}
 				
 				if ($test_count !== 0){

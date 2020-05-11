@@ -24,9 +24,11 @@ Test page for the Learn option.
 		<h3>Test Your Knowledge</h3>
 
 		<?php
-			if (isset($_SESSION['userId'])) // if logged in display the chapters
+			if (isset($_SESSION['userId'])) 
 			{
 				echo('<div id ="testlandingpage">');
+				
+				$_SESSION['current_test'] = null;
 				
 				if($_SESSION['user_level'] >= 1){
 					echo('<div id = "testbuttondiv">');
