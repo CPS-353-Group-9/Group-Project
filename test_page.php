@@ -20,13 +20,25 @@ Test page for the Learn option.
 
 		<?php
 			require "includes/db_i.php";
-		
-			if (isset($_SESSION['userId'])) 
-			{
+			
+			$wrong_test = false;
+			
+			if(isset($_POST['gotoTest'])){
+			
+				$temp_testnumber = (int)substr($_POST['gotoTest'], 5);
 				
-				if ($_SESSION['current_test'] === null){
-						$_SESSION['current_test'] = 1;
+				if( !isset($_SESSION['current_test']) ){
+					$_SESSION['current_test'] = $temp_testnumber;
 				}
+				
+				else if ($temp_testnumber !== $_SESSION['current_test']){
+					$wrong_test = true;
+				}
+			}
+			
+		
+			if (isset($_SESSION['userId']) && isset($_SESSION['current_test']) && $wrong_test === false ) 
+			{
 				
 				if ( !isset($_SESSION['question_number']) ) {
 				
@@ -113,17 +125,21 @@ Test page for the Learn option.
 					else{
 						echo( "You failed the test. Study more and try again later. <br/> ");
 					}
-				
-					$sql = "UPDATE user_grades SET test_1 = '$score' WHERE UPID = '$_SESSION[userId]'";
-					mysqli_query($connect, $sql);
 
 					echo("<br/><p> <a class='link' href='index.php'>Return to the home page.</a> </p>");
-				
-					if ( ($_SESSION['user_level'] === 1) && ($score >= 65) ){
 					
-						$sql_a = "UPDATE user_stats SET user_level = 2 WHERE UPID = '$_SESSION[userId]'";
+					$test_var = "test_" . $_SESSION['current_test'];
+					
+					$sql = "UPDATE user_grades SET $test_var = '$score' WHERE UPID = '$_SESSION[userId]'";
+					mysqli_query($connect, $sql);
+				
+					if ( ($_SESSION['user_level'] === $_SESSION['current_test']) && ($score >= 65) ){
+					
+						$level_up = $_SESSION['user_level'] + 1;
+					
+						$sql_a = "UPDATE user_stats SET user_level = '$level_up' WHERE UPID = '$_SESSION[userId]'";
 						mysqli_query($connect, $sql_a);
-						$_SESSION['user_level'] = 2;
+						$_SESSION['user_level'] += 1;
 						echo("<br/><br/>Congratulations! You leveled up!<br/>");
 						echo("<br/>Your level is now " . $_SESSION['user_level'] . ".<br/>" );
 					
@@ -143,20 +159,38 @@ Test page for the Learn option.
 				
 					echo('<div class="textbook-body">');
 				
-					echo('<form action="test1.php" method="post" id="quiz">');
+					echo('<form action="test_page.php" method="post">');
 
 					echo $question_array[$_SESSION['question_number'] - 1];
-
-					echo('<br/>');
+					
+					echo('<br/><input type="submit" class="button primary testbutton2" value = "Next Question">');	
 				
 					echo('</div>');
-				
-					echo('<br/><input type="submit" class="button primary testbutton2">');	
 					
 					echo('<br/><br/>');
 				
 					echo('</form>');
 				}
+				
+			}
+			else if (isset($_SESSION['userId']) && !isset($_SESSION['current_test']) ){
+				
+				echo ("<h4>No Test in Session</h4> ");
+				
+				echo( "You are not currently taking a test. <br/> Please select
+				a test by navigating to the Test <br/> Your Knowledge portion of the Learn tab.<br/><br/> ");
+				
+				echo('<p><a class="link" href="index.php">Return to the home page.</a> <br> </p>');
+				
+			}
+			else if (isset($_SESSION['userId']) && ($wrong_test === true) ){
+				
+				echo ("<h4>Test Already in Sesson</h4> ");
+				
+				echo( "You are already taking Test " . $_SESSION['current_test'] . ". <br/> Please finish
+				your current exam before <br/> attempting to start a new one.<br/><br/> ");
+				
+				echo('<p><a class="link" href="test_page.php">Click here to return to the test.</a> <br> </p>');
 				
 			}
 			else

@@ -28,26 +28,40 @@ Test page for the Learn option.
 			{
 				echo('<div id ="testlandingpage">');
 				
-				$_SESSION['current_test'] = null;
+					echo('<form action="test_page.php" method="post">');
 				
-				if($_SESSION['user_level'] >= 1){
-					echo('<div id = "testbuttondiv">');
-					echo('<a class="button primary testbutton" href="test1.php">Test 1</a>');	
-					echo('</div>');
+					if($_SESSION['user_level'] >= 1){
+						
+						echo('<div id = "testbuttondiv">');
 					
-				}
+							echo('<input type = "submit" class="button primary testbutton" 
+							name= "gotoTest" value = "Test 1" method="post">');
+							
+						echo('</div>');
+						
+					}
 				
-				if($_SESSION['user_level'] >= 2){
-					echo('<div id = "testbuttondiv">');
-					echo('<a class="button primary testbutton" href="test2.php">Test 2</a>');	
-					echo('</div>');
-				}
+					if($_SESSION['user_level'] >= 2){
+						
+						echo('<div id = "testbuttondiv">');
+						
+							echo('<input type = "submit" class="button primary testbutton" 
+							name = "gotoTest" value = "Test 2" method="post">');
+						
+						echo('</div>');
+					}
 				
-				if($_SESSION['user_level'] >= 3){
-					echo('<div id = "testbuttondiv">');
-					echo('<a class="button primary testbutton" href="test3.php">Test 3</a>');	
-					echo('</div>');
-				}
+					if($_SESSION['user_level'] >= 3){
+			
+						echo('<div id = "testbuttondiv">');
+					
+							echo('<input type = "submit" class="button primary testbutton" 
+							name = "gotoTest" value = "Test 3" method="post">');	
+						
+						echo('</div>');
+					}
+				
+					echo('</form>');
 				
 				echo('</div>');
 			}

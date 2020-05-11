@@ -45,6 +45,10 @@ Reset Stats page
                 mysqli_query($connect, $sql);
 				$sql = "UPDATE user_grades SET test_5 = NULL WHERE UPID = '$_SESSION[userId]'";
                 mysqli_query($connect, $sql);
+				
+				$_SESSION['current_test'] = null;
+				$_SESSION['question_number'] = null;
+				$_SESSION['total_correct'] = null;
 			}
 			else
 			{

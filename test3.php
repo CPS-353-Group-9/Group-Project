@@ -19,6 +19,7 @@ Test page for the Learn option.
 		<h3>Test Your Knowledge</h3>
 
 		<?php
+
 			if (isset($_SESSION['userId'])) // if logged in display the chapters
 			{
 				echo('<div class="textbook-body">');

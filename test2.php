@@ -19,7 +19,6 @@ Test page for the Learn option.
 		<h3>Test Your Knowledge</h3>
 
 		<?php
-			require "includes/db_i.php";
 		
 			if (isset($_SESSION['userId'])) // if logged in display the chapters
 			{
@@ -31,18 +30,6 @@ Test page for the Learn option.
 				
 				echo('</div>');
 				
-				if  ($_SESSION['user_level'] === 2) {
-					
-					$sql = "UPDATE user_grades SET test_2 = '100' WHERE UPID = '$_SESSION[userId]'";
-					mysqli_query($connect, $sql);
-					
-					$sql_a = "UPDATE user_stats SET user_level = 3 WHERE UPID = '$_SESSION[userId]'";
-					mysqli_query($connect, $sql_a);
-					$_SESSION['user_level'] = 3;
-					echo("<br/><br/>Congratulations! You leveled up!<br/>");
-					echo("<br/>Your level is now " . $_SESSION['user_level'] . ".<br/>" );
-					
-				}
 			}
 			else
 			{
