@@ -4,7 +4,8 @@
 
 Settings page for the Account option.
 
-*/	
+*/
+
 ?>
 
 <!DOCTYPE html>
@@ -14,10 +15,39 @@ Settings page for the Account option.
 	?>
 
 	<body>
+		<form action = "edit_settings.php" method="post">
 		<?php include 'navbar.php';?>
 		<h3>Settings</h3>
 		<?php
-				if (isset($_SESSION['userId'])) // if logged in display this message
+				require "includes/db_i.php"; // database connection file
+
+				$sql = "SELECT * FROM user_profile INNER JOIN user_stats ON user_profile.UPID = user_stats.UPID WHERE user_profile.user_name = '$_SESSION[user]'";
+				$result = mysqli_query($connect, $sql);
+				
+				if (mysqli_num_rows($result) > 0)
+				{
+					$row = mysqli_fetch_array($result);
+				
+					$_SESSION['email'] = $row['email'];
+					$_SESSION['userId'] = $row['UPID']; // getting the ID so we can later get their linked rpg info
+					$_SESSION['user'] = $row['user_name']; // getting Username
+					$_SESSION['avatar'] = $row['avatar'];
+					$_SESSION['create'] = $row['account_creation'];
+					$_SESSION['first'] = $row['first_name'];
+					$_SESSION['last'] = $row['last_name'];
+					$_SESSION['mi'] = $row['middle_initial'];
+					$_SESSION['country'] = $row['country'];
+					$_SESSION['state'] = $row['state'];
+					$_SESSION['city'] = $row['city'];
+					$_SESSION['occ'] = $row['occupation'];
+					$_SESSION['phone'] = $row['phone'];
+					$_SESSION['user_level'] = $row['user_level'];
+					$_SESSION['password'] = $row['password'];
+				}
+			$uid = $_SESSION['userId'];
+			$pass = $_SESSION['password'];
+
+			if (isset($_SESSION['userId'])) // if logged in display this message
 			{
 				// TOP BORDER
 				echo(
@@ -25,7 +55,7 @@ Settings page for the Account option.
 					<table>
 
 					<tr>
-						<th rowspan="3"> <img src="img/ACDC_logo.png" height="300" width="300" /> </th>
+						<th rowspan="3"> <div class="secondary"> <img src="'.$_SESSION['avatar'].'" height="300" width="300" border = "5" /> </div> </th>
 						<th> <h6> USERNAME: </h6> </th>
 						<th> <h6> '. $_SESSION['user'] .' </h6> </th>
 						<th> <h6> LEVEL:  </h6> </th>
@@ -38,8 +68,12 @@ Settings page for the Account option.
 					</tr>
 
 					<tr>
-						<th> <div id="subsetting-border" class="secondary"> <h6>BIO</h6> </div> </th>
-						<th> <a class="button primary" href="edit_settings.php">EDIT PROFILE</a> </th>
+						<div id = "fid1"><input type="hidden" name="uid" value='.$uid.' />
+						<div id = "fid1"><input type="hidden" name="pass" value='.$pass.' />
+
+						<th> <h6>  </h6> </th>
+						<th> <div id = "fid1"> <button <a class="button primary" name="settings-submit"> EDIT PROFILE </a> </button> </div> </th>
+						
 					</tr>
 
 					</table>
@@ -63,13 +97,17 @@ Settings page for the Account option.
 							<h2> STATE: '. $_SESSION['state'] .'</h2>							
 							<h2> CITY: '. $_SESSION['city'] .'</h2> <br>
 
-							<h2> OCCUPATION: '. $_SESSION['occ'] .'</h2>
-							<h2> Email: '. $_SESSION['email'] .'</h2>
+							<h6> CONTACT </h6>
+							<h2> Phone: '. $_SESSION['phone'] .'</h2>
+							<h2> Email: '. $_SESSION['email'] .'</h2> <br>
+
+							<h2> Occupation: '. $_SESSION['occ'] .'</h2>
 						</div> 
 						</th>
 
 						<th> <div id="subsetting-border" class="secondary">
 							<h4> ACTIVITY FEED </h4>
+							<h6 align = "center"> COMING SOON <h6>
 						
 						</div>
 						</th>
@@ -179,5 +217,6 @@ Settings page for the Account option.
 				echo '<p> [Not Logged In] </p>';
 			}
 		?>
+	</form>
 	</body>
 </html>
