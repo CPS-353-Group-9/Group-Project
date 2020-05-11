@@ -19,6 +19,8 @@ Test page for the Learn option.
 		<h3>Test 1 Results</h3>
 
 		<?php
+			require "includes/db_i.php";
+		
 			if (isset($_SESSION['userId'])) // if logged in display the chapters
 			{
 				
@@ -60,7 +62,10 @@ Test page for the Learn option.
 				}
 				
 				echo("<br/><p> <a class='link' href='index.php'>Return to the home page.</a> </p>");
-	
+					
+				$sql = "UPDATE user_grades SET test_1 = '$score' WHERE UPID = '$_SESSION[userId]'";
+                mysqli_query($connect, $sql);
+				
 			}
 			else
 			{
