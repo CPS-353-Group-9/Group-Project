@@ -26,7 +26,7 @@ Test page for the Learn option.
 				
 				if (isset($_POST['1'])){
 					$answer1 = $_POST['1'];
-					if ($answer1 == "A") { $totalCorrect++; }
+					if ($answer1 == "B") { $totalCorrect++; }
 				}
 				
 				if (isset($_POST['2'])){
@@ -41,19 +41,19 @@ Test page for the Learn option.
 				
 				if (isset($_POST['4'])){
 					$answer4 = $_POST['4'];
-					if ($answer4 == "A") { $totalCorrect++; }
+					if ($answer4 == "C") { $totalCorrect++; }
 				}
 				
 				if (isset($_POST['5'])){
 					$answer5 = $_POST['5'];
-					if ($answer5 == "A") { $totalCorrect++; }
+					if ($answer5 == "B") { $totalCorrect++; }
 				}
 				
 				$score = ($totalCorrect / 5.00) * 100;
 		
 				echo ("<h4> Score:    $score%</h4> ");
 				if ($score > 65){
-					echo("You passed the test. Good job! <br/><br/>");
+					echo("You passed the test. Good job! <br/>");
 				}
 				else{
 					echo( "You failed the test. Study more and try again later. <br/> ");
