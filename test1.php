@@ -38,7 +38,43 @@ Test page for the Learn option.
 				
 					$_SESSION['total_correct'] = 0;
 				
-				}	
+				}
+				else{
+					
+					$totalCorrect = $_SESSION['total_correct'];
+
+					if (isset($_POST['1'])){
+						$answer1 = $_POST['1'];
+						if ($answer1 == "B") { $totalCorrect++; }
+						$_SESSION['question_number'] += 1;
+					}
+				
+					if (isset($_POST['2'])){
+						$answer2 = $_POST['2'];
+						if ($answer2 == "A") { $totalCorrect++; }
+						$_SESSION['question_number'] += 1;
+					}
+				
+					if (isset($_POST['3'])){
+						$answer3 = $_POST['3'];
+						if ($answer3 == "A") { $totalCorrect++; }
+						$_SESSION['question_number'] += 1;
+					}
+				
+					if (isset($_POST['4'])){
+						$answer4 = $_POST['4'];
+						if ($answer4 == "C") { $totalCorrect++; }
+						$_SESSION['question_number'] += 1;
+					}
+				
+					if (isset($_POST['5'])){
+						$answer5 = $_POST['5'];
+						if ($answer5 == "B") { $totalCorrect++; }
+						$_SESSION['question_number'] += 1;
+					}
+					
+					$_SESSION['total_correct'] = $totalCorrect;
+				}
 				
 				$sql = "SELECT * FROM questions WHERE TEID = 1";
 				$result = mysqli_query($connect, $sql);
@@ -66,9 +102,9 @@ Test page for the Learn option.
 				}
 				
 				
-				if ($_SESSION['question_number'] === $_SESSION['test_length']){
+				if ($_SESSION['question_number'] > $_SESSION['test_length']){
 				
-					$score = ($_SESSION['total_correct'] / 5.00) * 100;
+					$score = ($_SESSION['total_correct'] / $_SESSION['test_length']) * 100;
 		
 					echo ("<h4> Score:    $score%</h4> ");
 					if ($score >= 65){
@@ -104,40 +140,6 @@ Test page for the Learn option.
 					
 				}
 				else{
-				
-					$totalCorrect = $_SESSION['total_correct'];
-
-					if (isset($_POST['1'])){
-						$answer1 = $_POST['1'];
-						if ($answer1 == "B") { $totalCorrect++; }
-						$_SESSION['question_number'] += 1;
-					}
-				
-					if (isset($_POST['2'])){
-						$answer2 = $_POST['2'];
-						if ($answer2 == "A") { $totalCorrect++; }
-						$_SESSION['question_number'] += 1;
-					}
-				
-					if (isset($_POST['3'])){
-						$answer3 = $_POST['3'];
-						if ($answer3 == "A") { $totalCorrect++; }
-						$_SESSION['question_number'] += 1;
-					}
-				
-					if (isset($_POST['4'])){
-						$answer4 = $_POST['4'];
-						if ($answer4 == "C") { $totalCorrect++; }
-						$_SESSION['question_number'] += 1;
-					}
-				
-					if (isset($_POST['5'])){
-						$answer5 = $_POST['5'];
-						if ($answer5 == "B") { $totalCorrect++; }
-						$_SESSION['question_number'] += 1;
-					}
-					
-					$_SESSION['total_correct'] = $totalCorrect;
 				
 					echo('<div class="textbook-body">');
 				
