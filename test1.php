@@ -50,9 +50,9 @@ Test page for the Learn option.
 				echo("<br/><h6>" . "Can Python be used as a calculator?" . "</h6>");
 				
 					echo('<input type="radio" id="3" name="3" value = "A" >
-				<label for="3-A">Yes</label><br>');
+				<label for="3-A">Yes.</label><br>');
 				echo('<input type="radio" id="3" name="3" value = "B" >
-				<label for="3-B">No</label><br>');
+				<label for="3-B">No.</label><br>');
 				echo('<input type="radio" id="3" name="3" value = "C" >
 				<label for="3-C">Only after backing up your hard drive.</label><br>');
 				echo('<input type="radio" id="3" name="3" value = "D" >
