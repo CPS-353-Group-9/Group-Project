@@ -54,17 +54,24 @@ Test page for the Learn option.
 				$score = ($totalCorrect / 5.00) * 100;
 		
 				echo ("<h4> Score:    $score%</h4> ");
-				if ($score > 65){
+				if ($score >= 65){
 					echo("You passed the test. Good job! <br/>");
 				}
 				else{
 					echo( "You failed the test. Study more and try again later. <br/> ");
 				}
 				
-				echo("<br/><p> <a class='link' href='index.php'>Return to the home page.</a> </p>");
-					
 				$sql = "UPDATE user_grades SET test_1 = '$score' WHERE UPID = '$_SESSION[userId]'";
                 mysqli_query($connect, $sql);
+				
+				if ( ($_SESSION['user_level'] == 1) && ($score >= 65) ){
+					
+					$sql_a = "UPDATE user_stats SET user_level = 2 WHERE UPID = '$_SESSION[userId]'";
+					mysqli_query($connect, $sql_a);
+					$_SESSION['user_level'] = 2;
+				}
+				
+				echo("<br/><p> <a class='link' href='index.php'>Return to the home page.</a> </p>");
 				
 			}
 			else
