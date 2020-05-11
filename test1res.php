@@ -63,15 +63,19 @@ Test page for the Learn option.
 				
 				$sql = "UPDATE user_grades SET test_1 = '$score' WHERE UPID = '$_SESSION[userId]'";
                 mysqli_query($connect, $sql);
+
+				echo("<br/><p> <a class='link' href='index.php'>Return to the home page.</a> </p>");
 				
-				if ( ($_SESSION['user_level'] == 1) && ($score >= 65) ){
+				if ( ($_SESSION['user_level'] === 1) && ($score >= 65) ){
 					
 					$sql_a = "UPDATE user_stats SET user_level = 2 WHERE UPID = '$_SESSION[userId]'";
 					mysqli_query($connect, $sql_a);
 					$_SESSION['user_level'] = 2;
+					echo("<br/><br/>Congratulations! You leveled up!<br/>");
+					echo("<br/>Your level is now " . $_SESSION['user_level'] . ".<br/>" );
+					
 				}
 				
-				echo("<br/><p> <a class='link' href='index.php'>Return to the home page.</a> </p>");
 				
 			}
 			else
