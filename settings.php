@@ -146,6 +146,13 @@ Settings page for the Account option.
 				$lvl2 = ('<th> <img src="img/SE_lvl_2.png" height="50" width="50" /> </th>');
 				$perfect_score = ('<th> <img src="img/SE_100.png" height="50" width="50" /> </th>');
 				
+				if ($user_level >= 2) // b3 = reaching level 2
+				{
+							$sql_b = "UPDATE user_badges SET badge_3 = true WHERE UPID = '$_SESSION[userId]'";
+							mysqli_query($connect, $sql_b);
+							
+							$_SESSION['b3'] = true;
+				}
 				echo(
 					'<div id="setting-border" class="secondary">
 
@@ -171,7 +178,7 @@ Settings page for the Account option.
 							echo $complete_ch2;
 						}
 
-						if ($user_level >= 2) // b3 = reaching level 2
+						if ($_SESSION['b3'] == true) // b3 = reaching level 2
 						{
 
 							echo $lvl2;
