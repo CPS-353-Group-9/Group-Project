@@ -90,16 +90,19 @@ Test page for the Learn option.
 				
 				$sql = "SELECT * FROM questions WHERE TEID = 1";
 				$result = mysqli_query($connect, $sql);
-				
-				$row = mysqli_fetch_assoc($result);
-				
+			
 				$count = 0;
 				$test_length = 0;
 				
-				$question_array = array();
+				$row = mysqli_fetch_assoc($result);
+				
+				$a = mysqli_fetch_field($result);
 				
 				foreach($row as &$value){
-					if ( ($value != null) && ($count > 1) ){
+					
+					$temp_str = substr($value, 0, 7);
+					
+					if ( ($value != null) && ($count > 1) && ($temp_str !== "answer: ") ){
 						$question_array[] = $value;
 						$test_length += 1;
 					}

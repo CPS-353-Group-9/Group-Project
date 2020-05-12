@@ -53,11 +53,15 @@ Reset Stats page
 				$_SESSION['question_number'] = null;
 				$_SESSION['total_correct'] = null;
 				
-				for( $x= 0; $x < $_SESSION['test_length']; $x++ ) {
+				if (isset($_SESSION['test_length'])){
 					
-					$temp_str = strval($x + 1);
+					for( $x= 0; $x < $_SESSION['test_length']; $x++ ) {
 						
-					$_POST[$temp_str] = null;
+						$temp_str = strval($x + 1);
+						
+						$_POST[$temp_str] = null;
+					}
+				
 				}
 			}
 			else
