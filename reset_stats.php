@@ -35,6 +35,10 @@ Reset Stats page
 				mysqli_query($connect, $sql_a);
 				$_SESSION['user_level'] = 1;
 				
+				$sql_b = "UPDATE user_stats SET user_exp = 0.000 WHERE UPID = '$_SESSION[userId]'";
+				mysqli_query($connect, $sql_a);
+				$_SESSION['user_exp'] = 0.000;
+				
 				$sql = "UPDATE user_grades SET test_1 = NULL WHERE UPID = '$_SESSION[userId]'";
                 mysqli_query($connect, $sql);
 				$sql = "UPDATE user_grades SET test_2 = NULL WHERE UPID = '$_SESSION[userId]'";

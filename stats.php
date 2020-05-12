@@ -29,6 +29,17 @@ Stats page for the Account option.
 				echo '<p> User: ' . $_SESSION['user'] . "</p>";
 				echo '<p> Level: ' . $_SESSION['user_level'] . '</p>'; //get level from database
 				
+				$sql_a = "SELECT user_exp FROM user_stats WHERE UPID = '$_SESSION[userId]'";
+				$result = mysqli_query($connect, $sql_a);
+				
+				$row_a = mysqli_fetch_assoc($result);
+				
+				foreach($row_a as &$value_a){
+					$_SESSION['user_exp'] = $value_a;
+				}
+				
+				echo '<p> EXP: ' . $_SESSION['user_exp'] . '</p>';
+				
 				$total = 0.0;
 				$test_count = 0;
 				
