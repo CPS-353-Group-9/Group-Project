@@ -40,6 +40,10 @@ a.link:hover{
     padding-right: 10%;
     font-size: 16px;
 }
+.textbook-body p{
+    text-align: left;
+    padding: 5px;
+}
 
 .keywords {
     font-weight: bold;
@@ -96,14 +100,19 @@ h6{
 }
 
 p{
-    padding-bottom: 10px;
+    padding-bottom: 15px;
 }
 
 footer {
-    position: absolute;
-    right: 0;bottom:0;left:0;
+    position: static;
+    padding-top: 5px;
 }
 
+pre{
+    display: inline-block;
+    white-space: pre-wrap;
+    text-align: left;
+}
 
 /*---ID's---*/
 #statement1{

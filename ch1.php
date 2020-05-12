@@ -40,8 +40,9 @@ Test page for the Learn option.
 					No matter the type of data, it is important to be able to store information. In programming, this is done with <span class="keywords">variables</span>. Just like in math, a variable is a placeholder for a <span class="keywords">value</span> except it doesn't just have to be a number. In Python, a variable can be called anything you want, as long as it starts with a letter or character that is not a number. Let's look at an example.
 				</p>
 				<p>
-					Let's say you want to store a person's name and age. Their name would be stored as a string, and their age would be stored as an int (unless of course it is for a young child who insists that they are 5 "and three quarters"). Unlike many coding languages, Python does not require you to specify the data type of a variable when declaring one,<sup>2</sup> so you can just create and use variables right then and there. To create a variable and assign a value to it, simply type what you want to call it followed by the equal sign (=) and its value. Like this:
-					<br>
+					Let's say you want to store a person's name and age. Their name would be stored as a string, and their age would be stored as an int (unless of course it is for a young child who insists that they are 5 "and three quarters"). Unlike many coding languages, Python does not require you to specify the data type of a variable when declaring one, so you can just create and use variables right then and there.<sup>2</sup> To create a variable and assign a value to it, simply type what you want to call it followed by the equal sign (=) and its value. 
+					<br> <br>
+					Like this:
 					<!--To be implemented later
 					Enter you name and age.
 					<form id="variables">
@@ -55,10 +56,12 @@ Test page for the Learn option.
 							</select>
 					</form>
 					Python code:-->
-					<code>
-						name = Karen
-						age = 25
-					</code>
+					<pre>
+						<code>
+							name = Karen
+							age = 25
+						</code>
+					</pre>
 				</p>
 				<p>
 					<sup>1</sup> Another common data type is <span class="keywords">boolean</span>, which is either true or false. However, booleans don't fall under the basic data types because they are technically just ints, as <i>true</i> is interpreted as 1, and <i>false</i> is interpreted as 0.
