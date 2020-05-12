@@ -79,7 +79,7 @@ Test page for the Learn option.
 					$_SESSION['total_correct'] = $totalCorrect;
 				}
 				
-				$sql = "SELECT * FROM questions WHERE TEID = 1";
+				$sql = "SELECT * FROM questions WHERE TEID = $_SESSION[current_test]";
 				$result = mysqli_query($connect, $sql);
 			
 				$count = 0;
@@ -91,7 +91,7 @@ Test page for the Learn option.
 					
 					$temp_str = substr($value, 0, 7);
 					
-					if ( ($value != null) && ($count > 1) && ($temp_str !== "answer: ") ){
+					if ( ($value != null) && ($count > 1) && ($temp_str !== "answer:") ){
 						$question_array[] = $value;
 						$test_length += 1;
 					}
