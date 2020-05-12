@@ -34,7 +34,7 @@ Test page for the Learn option.
 					In every coding language, there are what are called <span class="keywords">data types</span>. As the name suggests, a data type is a category of data into which a piece of information falls. The four basic ones that every programmer should know are int, float, char, and void.<sup>1</sup> 
 					<span class="keywords">Integers (ints)</span> and <span class="keywords">floats</span> are both types of numbers. The difference is that integers are whole numbers only while floats include decimals. Both include negative numbers. 
 					The <span class="keywords">char</span> data type stands for character, but it is more often thought of as a <span class="keywords">string</span>. A string is just a series of one or more characters. You can think of it as a word or phrase. Strings are denoted by being put in quotation marks. 
-					Lastly, <span class="keywords">void</span> just means empty. It is also referred to as <span class="keywords">null</span>. To denote a value as "null" in Python, we use the <span class="keywords">None</span> keyword.
+					Lastly, <span class="keywords">void</span> just means empty. It is also referred to as <span class="keywords">null</span>. To denote a value as "null" in Python, we use the <samp>None</samp> keyword.
 				</p>
 				<p> 
 					No matter the type of data, it is important to be able to store information. In programming, this is done with <span class="keywords">variables</span>. Just like in math, a variable is a placeholder for a <span class="keywords">value</span> except it doesn't just have to be a number. In Python, a variable can be called anything you want, as long as it starts with a letter or character that is not a number. Let's look at an example.
@@ -56,6 +56,7 @@ Test page for the Learn option.
 					Python code:-->
 					<pre><code style="text-align: left;">name = "Karen"<br>age = 25</code></pre>
 				</p>
+				<p>Notice how each statement is on a new line. This is one of the defining characteristics of Python. Python is one of the easier languages to code in because of the minimal syntax involved. In other languages, common errors due to missed characters such as semicolons and curly braces often have programmers racking their brains for hours. Python relies on tabs returns to keep everything organized, which is how much programmers format their code anyway.</p>
 				<p>
 					<sup>1</sup> Another common data type is <span class="keywords">boolean</span>, which is either true or false. However, booleans don't fall under the basic data types because they are technically just ints, as <i>true</i> is interpreted as 1, and <i>false</i> is interpreted as 0.
 				</p>
@@ -67,7 +68,7 @@ Test page for the Learn option.
 			<section>
 				<h4>Print Statements</h4>
 
-				<p>Now say we have some variables, what if we wanted to see them on our screen? This is where <span class="keywords">print statements</span> come in.</p>
+				<p>Now say we have some variables, what if we wanted to see them on our screen? This is where <span class="keywords">print statements</span> come in.</p> To print something in Python, you simply add the <samp>print</samp> keyword before it. 
 			</section>
 			
 			<section>
