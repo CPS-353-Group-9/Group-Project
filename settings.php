@@ -46,6 +46,7 @@ Settings page for the Account option.
 				}
 			$uid = $_SESSION['userId'];
 			$pass = $_SESSION['password'];
+			$user_level = $_SESSION['user_level'];
 
 			if (isset($_SESSION['userId'])) // if logged in display this message
 			{
@@ -170,13 +171,14 @@ Settings page for the Account option.
 							echo $complete_ch2;
 						}
 
-						if ($_SESSION['b3'] == false) // b3 = reaching level 2
+						if ($user_level >= 2) // b3 = reaching level 2
+						{
+
+							echo $lvl2;
+						}
+						else if($_SESSION['b3'] == false)
 						{
 							echo $locked;
-						}
-						else if($_SESSION['b3'] == true)
-						{
-							echo $lvl2;
 						}
 
 						if ($_SESSION['b4'] == false) // b4 = getting a perfect test score for the first time
