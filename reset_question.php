@@ -2,7 +2,7 @@
 
 /*
 
-Reset Stats page
+Reset Stats option page
 
 */
 
@@ -19,8 +19,10 @@ Reset Stats page
 		<h3>Reset</h3>
 
 		<?php
-			if (isset($_SESSION['userId'])) // if logged in display the chapters
+			if (isset($_SESSION['userId'])) 
 			{
+				# This page simply asks the user for confirmation to reset their stats
+				
 				echo('<div class="textbook-body">');
 
 				echo("<h6>" . "Are you sure you want to reset your stats?" . "</h6>");

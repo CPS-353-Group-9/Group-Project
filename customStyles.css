@@ -31,6 +31,34 @@ a.link:hover{
     text-decoration: none;
 }
 
+.test_option{
+
+	color: #f2f2f2;
+	font-family: Courier New, sans-serif;
+	background-color: Transparent;
+	border: none;
+    cursor:pointer;
+    overflow: hidden;
+    outline:none;
+	font-size: 16px;
+	padding-bottom: 10px;
+
+}
+
+.test_option:hover{
+    color: #f58426;
+    font-weight: bolder;
+	font-size: 16px;
+}
+
+.test_option:active{
+    color: #f58426;
+    font-weight: bolder;
+	font-size: 16px;
+	font-style: italic;
+}
+	
+
 .textbook-body{
     background-color: #003e7e; /*new paltz blue*/
     color: #f2f2f2;
@@ -63,6 +91,10 @@ a.link:hover{
 	padding-left: 70px;
 	padding-right: 70px;	
 	font-size: 18px;
+}
+
+.returnlink {
+		text-align: center;
 }
 
 /*---HTML TAGS---*/
