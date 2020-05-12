@@ -37,7 +37,7 @@ Test page for the Learn option.
 							$testnum = $x + 1;
 					
 							echo('<input type = "submit" class="button primary testbutton" 
-							name= "gotoTest" value = "Test '. $testnum . '"method="post">');
+							name= "gotoTest" value = "Test '. $testnum . '">');
 							
 						echo('</div>');
 						

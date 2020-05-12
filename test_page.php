@@ -60,18 +60,18 @@ Test page for the Learn option.
 						$post_temp = strval($w + 1);	
 						$answer_string = "answer_" . $post_temp;
 						
-						$sql_a = "SELECT $answer_string FROM questions WHERE TEID = $_SESSION[current_test]";
+						$sql_a = "SELECT $answer_string FROM test_answers WHERE TEID = $_SESSION[current_test]";
 						$result_a = mysqli_query($connect, $sql_a);
 						
 						$row_a = mysqli_fetch_assoc($result_a);
 						
 						foreach($row_a as $value_a){
-							$answer_substring = substr($value_a,8);
+							$answer= $value_a;
 						}
 
 						if (isset($_POST[$post_temp])){
 							$given_answer = $_POST[$post_temp];
-							if (trim($given_answer) == trim($answer_substring)) { $totalCorrect++; }
+							if (trim($given_answer) == trim($answer)) { $totalCorrect++; }
 							$_SESSION['question_number'] += 1;
 						}
 					}
@@ -89,9 +89,7 @@ Test page for the Learn option.
 				
 				foreach($row as &$value){
 					
-					$temp_str = substr($value, 0, 7);
-					
-					if ( ($value != null) && ($count > 1) && ($temp_str !== "answer:") ){
+					if ( ($value != null) && ($count > 1) ){
 						$question_array[] = $value;
 						$test_length += 1;
 					}
@@ -157,9 +155,7 @@ Test page for the Learn option.
 				
 					echo('<form action="test_page.php" method="post">');
 
-					echo $question_array[$_SESSION['question_number'] - 1];
-					
-					echo('<br/><input type="submit" class="button primary testbutton2" value = "Next Question">');	
+					echo $question_array[$_SESSION['question_number'] - 1];	
 				
 					echo('</div>');
 					
