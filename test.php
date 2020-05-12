@@ -26,9 +26,17 @@ Test page for the Learn option.
 		<?php
 			if (isset($_SESSION['userId'])) 
 			{
+				
+				# This page is a menu for selecting your test. It is important because it sends
+				# post data to test_page.php and tells it which test questions to fetch from the 
+				# database.
+				
 				echo('<div id ="testlandingpage">');
 				
 					echo('<form action="test_page.php" method="post">');
+				
+					# Loops to display all test options the user has access to 
+					# based on their current level
 				
 					for ($x = 0; $x < $_SESSION['user_level']; $x++) {
 						
