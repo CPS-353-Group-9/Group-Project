@@ -19,7 +19,7 @@ Reset Stats page
 		<h3>Reset</h3>
 
 		<?php
-			require "includes/db_i.php";
+			require "includes/db_i.php"; //needs the database connection
 		
 			if (isset($_SESSION['userId'])) 
 			{
@@ -31,6 +31,8 @@ Reset Stats page
 				
 				echo('</div>');
 				
+				# Loops through the user_grades table and sets the user's grades to null
+				
 				for ($y = 0; $y < $_SESSION['user_level']; $y++){
 					
 					$temp_testgrade = 'test_' . ($y + 1);
@@ -39,6 +41,8 @@ Reset Stats page
 					mysqli_query($connect, $sql);
 					
 				}
+				
+				# Sets the user's level to 1 in the database and exp to 0
 					
 				$sql_a = "UPDATE user_stats SET user_level = 1 WHERE UPID = '$_SESSION[userId]'";
 				mysqli_query($connect, $sql_a);
@@ -48,12 +52,13 @@ Reset Stats page
 				mysqli_query($connect, $sql_a);
 				$_SESSION['user_exp'] = 0.000;
 				
+				#Clears some session variables relevant to the tests
 				
 				$_SESSION['current_test'] = null;
 				$_SESSION['question_number'] = null;
 				$_SESSION['total_correct'] = null;
 				
-				if (isset($_SESSION['test_length'])){
+				if (isset($_SESSION['test_length'])){ //Clears post data for any active test
 					
 					for( $x= 0; $x < $_SESSION['test_length']; $x++ ) {
 						
