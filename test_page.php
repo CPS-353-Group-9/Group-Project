@@ -54,35 +54,26 @@ Test page for the Learn option.
 				else{
 					
 					$totalCorrect = $_SESSION['total_correct'];
+					
+					for ($w = 0 ; $w < $_SESSION['test_length'] ; $w++){
+						
+						$post_temp = strval($w + 1);	
+						$answer_string = "answer_" . $post_temp;
+						
+						$sql_a = "SELECT $answer_string FROM questions WHERE TEID = $_SESSION[current_test]";
+						$result_a = mysqli_query($connect, $sql_a);
+						
+						$row_a = mysqli_fetch_assoc($result_a);
+						
+						foreach($row_a as $value_a){
+							$answer_substring = substr($value_a,8);
+						}
 
-					if (isset($_POST['1'])){
-						$answer1 = $_POST['1'];
-						if ($answer1 == "B") { $totalCorrect++; }
-						$_SESSION['question_number'] += 1;
-					}
-				
-					if (isset($_POST['2'])){
-						$answer2 = $_POST['2'];
-						if ($answer2 == "A") { $totalCorrect++; }
-						$_SESSION['question_number'] += 1;
-					}
-				
-					if (isset($_POST['3'])){
-						$answer3 = $_POST['3'];
-						if ($answer3 == "A") { $totalCorrect++; }
-						$_SESSION['question_number'] += 1;
-					}
-				
-					if (isset($_POST['4'])){
-						$answer4 = $_POST['4'];
-						if ($answer4 == "C") { $totalCorrect++; }
-						$_SESSION['question_number'] += 1;
-					}
-				
-					if (isset($_POST['5'])){
-						$answer5 = $_POST['5'];
-						if ($answer5 == "B") { $totalCorrect++; }
-						$_SESSION['question_number'] += 1;
+						if (isset($_POST[$post_temp])){
+							$given_answer = $_POST[$post_temp];
+							if (trim($given_answer) == trim($answer_substring)) { $totalCorrect++; }
+							$_SESSION['question_number'] += 1;
+						}
 					}
 					
 					$_SESSION['total_correct'] = $totalCorrect;
@@ -95,8 +86,6 @@ Test page for the Learn option.
 				$test_length = 0;
 				
 				$row = mysqli_fetch_assoc($result);
-				
-				$a = mysqli_fetch_field($result);
 				
 				foreach($row as &$value){
 					

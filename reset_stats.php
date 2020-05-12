@@ -27,7 +27,7 @@ Reset Stats page
 
 				echo("<h6>" . "Your stats have been reset." . "</h6>");
 				
-				echo('<p><a class="link" href="index.php">Go back to the home page</a> <br> </p>');
+				echo('<a class="link returnlink" href="index.php">Go back to the home page</a> <br>');
 				
 				echo('</div>');
 				
