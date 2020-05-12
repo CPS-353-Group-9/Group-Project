@@ -171,6 +171,17 @@ Test page for the Learn option.
 					echo ("<h4> Score:    $score%</h4> ");
 					if ($score >= 65){ //passing score is a standard 65
 						echo("You passed the test. Good job! <br/>");
+						
+						# gives the user Badge 4 if they score 100%
+						if ($score == 100){
+						
+							$sql_b = "UPDATE user_badges SET badge_4 = true WHERE UPID = '$_SESSION[userId]'";
+							mysqli_query($connect, $sql_b);
+							
+							$_SESSION['b4'] = true;
+							
+						}
+						
 					}
 					else{
 						echo( "You failed the test. Study more and try again later. <br/> ");
