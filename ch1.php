@@ -54,21 +54,29 @@ Test page for the Learn option.
 							</select>
 					</form>
 					Python code:-->
-					<pre><code style="text-align: left;">name = "Karen"<br>age = 25</code></pre>
-				</p>
-				<p>Notice how each statement is on a new line. This is one of the defining characteristics of Python. Python is one of the easier languages to code in because of the minimal syntax involved. In other languages, common errors due to missed characters such as semicolons and curly braces often have programmers racking their brains for hours. Python relies on tabs returns to keep everything organized, which is how much programmers format their code anyway.</p>
-				<p>
-					<sup>1</sup> Another common data type is <span class="keywords">boolean</span>, which is either true or false. However, booleans don't fall under the basic data types because they are technically just ints, as <i>true</i> is interpreted as 1, and <i>false</i> is interpreted as 0.
+					<pre><code>name = "Karen"<br>age = 25</code></pre>
 				</p>
 				<p>
-					<sup>2</sup> Many other coding languages (such as Java and C) allow and/or require you to <span class="keywords">declare</span> a variable before you can use it. To declare a variable just means to define it for the first time, not necessarily <span class="keywords">assigning</span> a value it. 
+					Notice how each statement is on a new line. This is one of the defining characteristics of Python. Python is one of the easier languages to code in because of the minimal syntax involved. In other languages, common errors due to missed characters such as semicolons and curly braces often have programmers racking their brains for hours. Python relies on tabs returns to keep everything organized, which is how much programmers format their code anyway.
 				</p>
+				<br>
+				<!--Footnotes for Data Types and Variables section-->
+				<div class="footnotes">
+					<p>
+						<sup>1</sup> Another common data type is <span class="keywords">boolean</span>, which is either true or false. However, booleans don't fall under the basic data types because they are technically just ints, as <i>true</i> is interpreted as 1, and <i>false</i> is interpreted as 0.
+					</p>
+					<p>
+						<sup>2</sup> Many other coding languages (such as Java and C) allow and/or require you to <span class="keywords">declare</span> a variable before you can use it. To declare a variable just means to define it for the first time, not necessarily <span class="keywords">assigning</span> a value it. 
+					</p>
+				</div>
 			</section>
 
 			<section>
 				<h4>Print Statements</h4>
 
-				<p>Now say we have some variables, what if we wanted to see them on our screen? This is where <span class="keywords">print statements</span> come in.</p> To print something in Python, you simply add the <samp>print</samp> keyword before it. 
+				<p>
+					Now say we have some variables, what if we wanted to see them on our screen? This is where <span class="keywords">print statements</span> come in. To print something in Python, you simply add the <samp>print</samp> keyword before it. 
+				</p>
 			</section>
 			
 			<section>
