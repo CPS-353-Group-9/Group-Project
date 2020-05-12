@@ -149,11 +149,14 @@ Test page for the Learn option.
 					$_SESSION['current_test'] = null;
 					$_SESSION['question_number'] = null;
 					$_SESSION['total_correct'] = null;
-					$_POST['1'] = null;
-					$_POST['2'] = null;
-					$_POST['3'] = null;
-					$_POST['4'] = null;
-					$_POST['5'] = null;
+					
+					for( $x= 0; $x < $_SESSION['test_length']; $x++ ) {
+					
+						$temp_str = strval($x + 1);
+						
+						$_POST[$temp_str] = null;
+
+					}
 					
 				}
 				else{

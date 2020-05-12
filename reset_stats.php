@@ -30,6 +30,15 @@ Reset Stats page
 				echo('<p><a class="link" href="index.php">Go back to the home page</a> <br> </p>');
 				
 				echo('</div>');
+				
+				for ($y = 0; $y < $_SESSION['user_level']; $y++){
+					
+					$temp_testgrade = 'test_' . ($y + 1);
+				
+					$sql = "UPDATE user_grades SET $temp_testgrade = NULL WHERE UPID = '$_SESSION[userId]'";
+					mysqli_query($connect, $sql);
+					
+				}
 					
 				$sql_a = "UPDATE user_stats SET user_level = 1 WHERE UPID = '$_SESSION[userId]'";
 				mysqli_query($connect, $sql_a);
@@ -39,20 +48,17 @@ Reset Stats page
 				mysqli_query($connect, $sql_a);
 				$_SESSION['user_exp'] = 0.000;
 				
-				$sql = "UPDATE user_grades SET test_1 = NULL WHERE UPID = '$_SESSION[userId]'";
-                mysqli_query($connect, $sql);
-				$sql = "UPDATE user_grades SET test_2 = NULL WHERE UPID = '$_SESSION[userId]'";
-                mysqli_query($connect, $sql);
-				$sql = "UPDATE user_grades SET test_3 = NULL WHERE UPID = '$_SESSION[userId]'";
-                mysqli_query($connect, $sql);
-				$sql = "UPDATE user_grades SET test_4 = NULL WHERE UPID = '$_SESSION[userId]'";
-                mysqli_query($connect, $sql);
-				$sql = "UPDATE user_grades SET test_5 = NULL WHERE UPID = '$_SESSION[userId]'";
-                mysqli_query($connect, $sql);
 				
 				$_SESSION['current_test'] = null;
 				$_SESSION['question_number'] = null;
 				$_SESSION['total_correct'] = null;
+				
+				for( $x= 0; $x < $_SESSION['test_length']; $x++ ) {
+					
+					$temp_str = strval($x + 1);
+						
+					$_POST[$temp_str] = null;
+				}
 			}
 			else
 			{
