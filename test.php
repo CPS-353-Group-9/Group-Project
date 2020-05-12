@@ -30,35 +30,17 @@ Test page for the Learn option.
 				
 					echo('<form action="test_page.php" method="post">');
 				
-					if($_SESSION['user_level'] >= 1){
+					for ($x = 0; $x < $_SESSION['user_level']; $x++) {
 						
 						echo('<div id = "testbuttondiv">');
 					
+							$testnum = $x + 1;
+					
 							echo('<input type = "submit" class="button primary testbutton" 
-							name= "gotoTest" value = "Test 1" method="post">');
+							name= "gotoTest" value = "Test '. $testnum . '"method="post">');
 							
 						echo('</div>');
 						
-					}
-				
-					if($_SESSION['user_level'] >= 2){
-						
-						echo('<div id = "testbuttondiv">');
-						
-							echo('<input type = "submit" class="button primary testbutton" 
-							name = "gotoTest" value = "Test 2" method="post">');
-						
-						echo('</div>');
-					}
-				
-					if($_SESSION['user_level'] >= 3){
-			
-						echo('<div id = "testbuttondiv">');
-					
-							echo('<input type = "submit" class="button primary testbutton" 
-							name = "gotoTest" value = "Test 3" method="post">');	
-						
-						echo('</div>');
 					}
 				
 					echo('</form>');

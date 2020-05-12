@@ -133,7 +133,8 @@ Test page for the Learn option.
 					$sql = "UPDATE user_grades SET $test_var = '$score' WHERE UPID = '$_SESSION[userId]'";
 					mysqli_query($connect, $sql);
 				
-					if ( ($_SESSION['user_level'] === $_SESSION['current_test']) && ($score >= 65) ){
+					if ( ($_SESSION['user_level'] === $_SESSION['current_test']) && ($score >= 65)
+						 && ($_SESSION['user_level'] < 5) ){
 					
 						$level_up = $_SESSION['user_level'] + 1;
 					
